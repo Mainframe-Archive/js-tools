@@ -1,0 +1,17 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "ie >= 10"],
+          "node": 8
+        },
+        "modules": false,
+        "loose": true
+      }
+    ],
+    "flow"
+  ],
+  "plugins": ["syntax-class-properties", "transform-class-properties"]
+}

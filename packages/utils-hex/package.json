@@ -1,0 +1,16 @@
+{
+  "name": "@mainframe/utils-hex",
+  "version": "0.1.0",
+  "description": "Hex encoding utilities",
+  "repository": "git@github.com:MainframeHQ/js-tools.git",
+  "main": "lib/index.js",
+  "author": "Mainframe",
+  "license": "MIT",
+  "scripts": {
+    "clean": "del lib",
+    "build:js": "flow-remove-types src --out-dir lib",
+    "build:flow": "flow-copy-source src lib",
+    "build": "yarn clean && yarn build:js && yarn build:flow",
+    "prepublishOnly": "yarn build"
+  }
+}

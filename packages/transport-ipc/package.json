@@ -1,0 +1,23 @@
+{
+  "name": "@mainframe/transport-ipc",
+  "version": "0.1.0",
+  "description": "IPC transport",
+  "repository": "git@github.com:MainframeHQ/js-tools.git",
+  "main": "lib/index.js",
+  "author": "Mainframe",
+  "license": "MIT",
+  "scripts": {
+    "clean": "del lib",
+    "build:js": "flow-remove-types src --out-dir lib",
+    "build:flow": "flow-copy-source src lib",
+    "build": "yarn clean && yarn build:js && yarn build:flow",
+    "prepublishOnly": "yarn build"
+  },
+  "dependencies": {
+    "rx-socket": "^0.2.0"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.69.0",
+    "rxjs": "^5.5.8"
+  }
+}
