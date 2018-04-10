@@ -6,6 +6,7 @@
   "main": "lib/index.js",
   "author": "Mainframe",
   "license": "MIT",
+  "files": ["lib/*"],
   "scripts": {
     "clean": "del lib",
     "build:js": "babel src --out-dir lib",

@@ -7,6 +7,10 @@ import ws from '@mainframe/rpc-ws-node'
 const HTTP_RE = /^https?:\/\//gi
 const WS_RE = /^wss?:\/\//gi
 
+export const httpRPC = http
+export const ipcRPC = ipc
+export const wsRPC = ws
+
 export default (endpoint: string) => {
   if (HTTP_RE.test(endpoint)) {
     return http(endpoint)

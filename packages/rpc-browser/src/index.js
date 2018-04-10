@@ -7,6 +7,10 @@ import ws from '@mainframe/rpc-ws-browser'
 const HTTP_RE = /^https?:\/\//gi
 const WS_RE = /^wss?:\/\//gi
 
+export const httpRPC = http
+export const web3RPC = web3
+export const wsRPC = ws
+
 export default (endpoint?: ?(string | Object)) => {
   if (typeof endpoint === 'string') {
     if (HTTP_RE.test(endpoint)) {

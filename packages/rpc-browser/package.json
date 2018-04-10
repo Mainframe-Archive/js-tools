@@ -1,11 +1,12 @@
 {
   "name": "@mainframe/rpc-browser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "RPC for browser",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
   "author": "Mainframe",
   "license": "MIT",
+  "files": ["lib/*"],
   "scripts": {
     "clean": "del lib",
     "build:js": "flow-remove-types src --out-dir lib",
