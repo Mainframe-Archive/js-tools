@@ -5,7 +5,7 @@ Shared JS libraries for various Mainframe projects.
 ## Packages
 
 | Name | Version | Description
-| -
+| ---- | ------- | -----------
 | **RPC clients**
 | [`@mainframe/rpc-base`](/packages/rpc-base) | 0.1.0 | Base class for RPC clients
 | [`@mainframe/rpc-browser`](/packages/rpc-browser) | 0.1.0 | RPC client factory for browser
