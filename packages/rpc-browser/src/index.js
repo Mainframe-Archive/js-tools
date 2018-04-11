@@ -19,6 +19,9 @@ export default (endpoint?: ?(string | Object)) => {
     if (WS_RE.test(endpoint)) {
       return ws(endpoint)
     }
+    throw new Error(
+      'Invalid endpoint provided: expecting HTTP or WebSocket URL',
+    )
   }
   return web3(endpoint)
 }

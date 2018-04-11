@@ -12,10 +12,14 @@
     "build:js": "flow-remove-types src --out-dir lib",
     "build:flow": "flow-copy-source src lib",
     "build": "yarn clean && yarn build:js && yarn build:flow",
+    "test": "flow check",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "@mainframe/rpc-request": "^0.1.0",
     "@mainframe/transport-web3": "^0.1.0"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.69.0"
   }
 }
