@@ -7,14 +7,14 @@
   "author": "Mainframe",
   "license": "MIT",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "flow:create-symlinks": "flow-mono create-symlinks .flowconfig",
-    "flow:install-types":
-      "flow-mono install-types --overwrite --ignoreDeps=peer",
+    "flow:install-types": "flow-mono install-types --overwrite --ignoreDeps=peer",
     "flow:create-stubs": "flow-mono create-stubs --use-root",
-    "flow:bootstrap":
-      "yarn flow:create-symlinks && yarn flow:install-types && yarn flow:create-stubs",
+    "flow:bootstrap": "yarn flow:create-symlinks && yarn flow:install-types && yarn flow:create-stubs",
     "bootstrap": "lerna bootstrap && yarn flow:bootstrap",
     "test": "lerna run test",
     "build": "lerna run build",
@@ -39,7 +39,10 @@
       "ignore": []
     },
     "create-stubs": {
-      "dependencies": ["rxjs", "rx-socket"]
+      "dependencies": [
+        "rxjs",
+        "rx-socket"
+      ]
     }
   }
 }

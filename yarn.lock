@@ -839,8 +839,8 @@ camelcase@^4.0.0, camelcase@^4.1.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
 caniuse-lite@^1.0.30000792:
-  version "1.0.30000824"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000824.tgz#de3bc1ba0bff4937302f8cb2a8632a8cc1c07f9a"
+  version "1.0.30000828"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000828.tgz#048f98de213f7a3c047bf78a9523c611855d4fdd"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -3349,15 +3349,9 @@ rx-socket@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/rx-socket/-/rx-socket-0.2.0.tgz#29cb7fa6f0e0ba5e4812dfb4d1dcccb4c7aab1e8"
 
-rxjs@^5.5.2, rxjs@^5.5.9:
-  version "5.5.9"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.9.tgz#12a0487794b00f5eb370fec2751bd973a89886fb"
-  dependencies:
-    symbol-observable "1.0.1"
-
-rxjs@^5.5.8:
-  version "5.5.8"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.8.tgz#b2b0809a57614ad6254c03d7446dea0d83ca3791"
+rxjs@^5.5.2, rxjs@^5.5.8, rxjs@^5.5.9:
+  version "5.5.10"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.10.tgz#fde02d7a614f6c8683d0d1957827f492e09db045"
   dependencies:
     symbol-observable "1.0.1"
 
