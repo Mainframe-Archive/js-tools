@@ -1,6 +1,6 @@
 ## rpc-ws-browser
 
-[`stream-rpc`](../stream-rpc) factory using [`transport-ws-browser`](../transport-ws-browser).
+[`rpc-stream`](../rpc-stream) factory using [`transport-ws-browser`](../transport-ws-browser).
 
 ## Installation
 
@@ -26,7 +26,7 @@ rpc.request('getUser', ['1234']).then(console.log)
 
 1.  `url: string`
 
-**Returns** [`StreamRPC`](../stream-rpc)
+**Returns** [`StreamRPC`](../rpc-stream)
 
 ## License
 

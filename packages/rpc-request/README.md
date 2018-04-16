@@ -13,7 +13,7 @@ yarn add @mainframe/rpc-request
 ## Usage
 
 ```js
-import RequestRPC from '@mainframe/request-rpc'
+import RequestRPC from '@mainframe/rpc-request'
 import httpTransport from '@mainframe/transport-http-node'
 
 class MyAPI extends RequestRPC {

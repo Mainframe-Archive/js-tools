@@ -1,6 +1,6 @@
 ## rpc-web3
 
-[`request-rpc`](../request-rpc) factory using [`transport-web3`](../transport-web3).
+[`rpc-request`](../rpc-request) factory using [`transport-web3`](../transport-web3).
 
 ## Installation
 
@@ -26,7 +26,7 @@ rpc.request('getUser', ['1234']).then(console.log)
 
 1.  `url?: string`: optional HTTP endpoint. When not provided, `window.web3.currentProvider` will be used if available.
 
-**Returns** [`RequestRPC`](../request-rpc)
+**Returns** [`RequestRPC`](../rpc-request)
 
 ## License
 

@@ -13,7 +13,7 @@ yarn add @mainframe/rpc-stream
 ## Usage
 
 ```js
-import StreamRPC from '@mainframe/stream-rpc'
+import StreamRPC from '@mainframe/rpc-stream'
 import ipcTransport from '@mainframe/transport-ipc'
 
 class MyAPI extends StreamRPC {

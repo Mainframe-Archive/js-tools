@@ -1,6 +1,6 @@
 ## rpc-ipc
 
-[`stream-rpc`](../stream-rpc) factory using [`transport-ipc`](../transport-ipc).
+[`rpc-stream`](../rpc-stream) factory using [`transport-ipc`](../transport-ipc).
 
 ## Installation
 
@@ -26,7 +26,7 @@ rpc.request('getUser', ['1234']).then(console.log)
 
 1.  `path: string`
 
-**Returns** [`StreamRPC`](../stream-rpc)
+**Returns** [`StreamRPC`](../rpc-stream)
 
 ## License
 

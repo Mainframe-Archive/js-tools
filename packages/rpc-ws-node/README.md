@@ -1,6 +1,6 @@
 ## rpc-ws-node
 
-[`stream-rpc`](../stream-rpc) factory using [`transport-ws-node`](../transport-ws-node).
+[`rpc-stream`](../rpc-stream) factory using [`transport-ws-node`](../transport-ws-node).
 
 ## Installation
 
@@ -26,7 +26,7 @@ rpc.request('getUser', ['1234']).then(console.log)
 
 1.  `url: string`
 
-**Returns** [`StreamRPC`](../stream-rpc)
+**Returns** [`StreamRPC`](../rpc-stream)
 
 ## License
 

@@ -1,6 +1,6 @@
 ## rpc-node
 
-[`request-rpc`](../request-rpc) or [`stream-rpc`](../stream-rpc) factory with automatic transport selection.
+[`rpc-request`](../rpc-request) or [`rpc-stream`](../rpc-stream) factory with automatic transport selection.
 
 ## Installation
 
@@ -26,7 +26,7 @@ const rpcOverIPC = nodeRPC('/path/to/socket') // StreamRPC using ICP transport
 
 1.  `endpoint: string`: socket path, HTTP or WebSocket URL to connect to.
 
-**Returns** [`RequestRPC`](../request-rpc) (with HTTP endpoint) or [`StreamRPC`](../stream-rpc) (with IPC or WebSocket endpoint).
+**Returns** [`RequestRPC`](../rpc-request) (with HTTP endpoint) or [`StreamRPC`](../rpc-stream) (with IPC or WebSocket endpoint).
 
 ## License
 

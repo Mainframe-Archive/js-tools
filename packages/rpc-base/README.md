@@ -11,7 +11,7 @@ yarn add @mainframe/rpc-base
 ## Usage
 
 ```js
-import BaseRPC from '@mainframe/base-rpc'
+import BaseRPC from '@mainframe/rpc-base'
 
 class MyRPC extends BaseRPC {
   request(...params: any): Promise<any> {

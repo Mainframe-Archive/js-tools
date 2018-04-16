@@ -1,6 +1,6 @@
 ## rpc-browser
 
-[`request-rpc`](../request-rpc) or [`stream-rpc`](../stream-rpc) factory with automatic transport selection.
+[`rpc-request`](../rpc-request) or [`rpc-stream`](../rpc-stream) factory with automatic transport selection.
 
 ## Installation
 
@@ -26,7 +26,7 @@ const rpcOverIPC = browserRPC(window.web3.currentProvider) // RequestRPC using W
 
 1.  `endpoint?: string | Object`: Web3 provider, HTTP or WebSocket URL to connect to. When not provided, `window.web3.currentProvider` will be used if available.
 
-**Returns** [`RequestRPC`](../request-rpc) (with HTTP endpoint or Web3 provider) or [`StreamRPC`](../stream-rpc) (with WebSocket endpoint).
+**Returns** [`RequestRPC`](../rpc-request) (with HTTP endpoint or Web3 provider) or [`StreamRPC`](../rpc-stream) (with WebSocket endpoint).
 
 ## License
 

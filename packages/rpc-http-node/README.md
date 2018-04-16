@@ -1,6 +1,6 @@
 ## rpc-http-node
 
-[`request-rpc`](../request-rpc) factory using [`transport-http-node`](../transport-http-node).
+[`rpc-request`](../rpc-request) factory using [`transport-http-node`](../transport-http-node).
 
 ## Installation
 
@@ -26,7 +26,7 @@ rpc.request('getUser', ['1234']).then(console.log)
 
 1.  `url: string`
 
-**Returns** [`RequestRPC`](../request-rpc)
+**Returns** [`RequestRPC`](../rpc-request)
 
 ## License
 
