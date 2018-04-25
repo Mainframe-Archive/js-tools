@@ -1,9 +1,6 @@
 // @flow
 
-import { Observable } from 'rxjs/Observable'
-import type { Subject } from 'rxjs/Subject'
-import { Subscriber } from 'rxjs/Subscriber'
-import type { Subscription } from 'rxjs/Subscription'
+import { Observable, type Subject, Subscriber, type Subscription } from 'rxjs'
 
 import BaseRPC from '@mainframe/rpc-base'
 
@@ -67,7 +64,7 @@ export default class StreamRPC extends BaseRPC {
     })
   }
 
-  observe(method: string, params?: Array<any> = []): Observable<any> {
+  observe(method: string, params?: any): Observable<any> {
     return Observable.create(observer => {
       const id = this.createId()
       const msg = { jsonrpc: '2.0', method, id, params }
@@ -82,7 +79,7 @@ export default class StreamRPC extends BaseRPC {
     })
   }
 
-  request(method: string, params?: Array<any>): Promise<any> {
+  request(method: string, params?: any): Promise<any> {
     return new Promise((resolve, reject) => {
       const sub = this.observe(method, params).subscribe(
         value => {

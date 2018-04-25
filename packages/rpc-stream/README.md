@@ -45,7 +45,7 @@ See [the `BaseRPC` API](../rpc-base/README.md#api) for inherited methods and pro
 **Arguments**
 
 1.  `method: string`
-1.  `params: Array<any>``
+1.  `params: Array<any>`
 
 **Returns** `Promise<any>`
 

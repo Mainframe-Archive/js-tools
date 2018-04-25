@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/rpc-ws-node",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "WebSocket RPC for node",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
@@ -16,10 +16,10 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@mainframe/rpc-stream": "^0.1.0",
-    "@mainframe/transport-ws-node": "^0.1.0"
+    "@mainframe/rpc-stream": "^0.2.0",
+    "@mainframe/transport-ws-node": "^0.2.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.69.0"
+    "flow-bin": "^0.70.0"
   }
 }

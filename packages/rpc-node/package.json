@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/rpc-node",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "RPC for node",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
@@ -17,10 +17,10 @@
   },
   "dependencies": {
     "@mainframe/rpc-http-node": "^0.1.0",
-    "@mainframe/rpc-ipc": "^0.1.0",
-    "@mainframe/rpc-ws-node": "^0.1.0"
+    "@mainframe/rpc-ipc": "^0.2.0",
+    "@mainframe/rpc-ws-node": "^0.2.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.69.0"
+    "flow-bin": "^0.70.0"
   }
 }

@@ -1,5 +1,5 @@
 // @flow
 
-import { WebSocketSubject } from 'rxjs/observable/dom/WebSocketSubject'
+import { WebSocketSubject } from 'rxjs/webSocket'
 
 export default (url: string) => new WebSocketSubject({ url })

@@ -10,7 +10,7 @@ export default class RequestRPC extends BaseRPC {
     this._fetch = fetch
   }
 
-  request(method: string, params?: Array<any>): Promise<any> {
+  request(method: string, params?: any): Promise<any> {
     return this._fetch({
       id: this.createId(),
       jsonrpc: '2.0',
