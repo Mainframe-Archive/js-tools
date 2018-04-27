@@ -2,6 +2,7 @@
   "lerna": "2.10.1",
   "version": "independent",
   "npmClient": "yarn",
+  "npmClientArgs": ["--ignore-engines"],
   "useWorkspaces": true,
   "packages": ["packages/*"]
 }

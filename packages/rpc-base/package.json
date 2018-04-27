@@ -6,7 +6,9 @@
   "main": "lib/index.js",
   "author": "Mainframe",
   "license": "MIT",
-  "files": ["lib/*"],
+  "files": [
+    "lib/*"
+  ],
   "scripts": {
     "clean": "del lib",
     "build:js": "babel src --out-dir lib",
@@ -19,6 +21,6 @@
     "nanoid": "^1.0.2"
   },
   "devDependencies": {
-    "flow-bin": "^0.70.0"
+    "flow-bin": "^0.71.0"
   }
 }

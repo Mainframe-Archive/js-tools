@@ -6,7 +6,9 @@
   "main": "lib/index.js",
   "author": "Mainframe",
   "license": "MIT",
-  "files": ["lib/*"],
+  "files": [
+    "lib/*"
+  ],
   "scripts": {
     "clean": "del lib",
     "build:js": "flow-remove-types src --out-dir lib",
@@ -21,6 +23,6 @@
     "@mainframe/rpc-ws-node": "^0.2.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.70.0"
+    "flow-bin": "^0.71.0"
   }
 }
