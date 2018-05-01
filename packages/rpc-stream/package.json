@@ -1,14 +1,12 @@
 {
   "name": "@mainframe/rpc-stream",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Stream-based RPC",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
   "author": "Mainframe",
   "license": "MIT",
-  "files": [
-    "lib/*"
-  ],
+  "files": ["lib/*"],
   "scripts": {
     "clean": "del lib",
     "build:js": "flow-remove-types src --out-dir lib",

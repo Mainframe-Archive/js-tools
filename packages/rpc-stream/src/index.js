@@ -69,10 +69,7 @@ export default class StreamRPC extends BaseRPC {
       const id = this.createId()
       const msg = { jsonrpc: '2.0', method, id, params }
       this._observers.set(id, new Subscriber(observer))
-      this._transport.next(
-        // $FlowFixMe
-        JSON.stringify(msg),
-      )
+      this._transport.next(msg)
       return () => {
         this._observers.delete(id)
       }
