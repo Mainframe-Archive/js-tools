@@ -21,6 +21,6 @@
     "@mainframe/rpc-base": "^0.1.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.71.0"
+    "flow-bin": "^0.72.0"
   }
 }

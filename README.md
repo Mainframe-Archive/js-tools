@@ -27,7 +27,45 @@ Shared JS libraries for various Mainframe projects.
 | [`@mainframe/transport-ws-browser`](/packages/transport-ws-browser) | [![npm version](https://img.shields.io/npm/v/@mainframe/transport-ws-browser.svg)](https://www.npmjs.com/package/@mainframe/transport-ws-browser) | WebSocket transport for browser
 | [`@mainframe/transport-ws-node`](/packages/transport-ws-node) | [![npm version](https://img.shields.io/npm/v/@mainframe/transport-ws-node.svg)](https://www.npmjs.com/package/@mainframe/transport-ws-node) | WebSocket transport for node
 | **Utilities**
+| [`@mainframe/utils-crypto`](/packages/utils-crypto) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-crypto.svg)](https://www.npmjs.com/package/@mainframe/utils-crypto) | Cryptographic primitives
 | [`@mainframe/utils-hex`](/packages/utils-hex) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-hex.svg)](https://www.npmjs.com/package/@mainframe/utils-hex) | Hexadecimal strings encoding and decoding
+
+## Development
+
+This repository uses [Lerna](https://github.com/lerna/lerna) and [Yarn workspaces](https://yarnpkg.com/lang/en/docs/workspaces/) to manage multiple packages and their dependencies.  
+Some tools such as [Flow](https://flow.org/) make this organisation a bit more complex and require additional setup (such as [flow-mono-cli](https://github.com/ImmoweltGroup/flow-mono-cli) for Flow).
+
+### Setup
+
+After pulling the repository,
+
+1.  Run `yarn install` to install the dependencies
+1.  Run `yarn bootstrap` to link the packages and setup Flow
+1.  Run `yarn start` to compile the packages and run the tests
+
+In the package you want to work on, you can run the local commands such as `yarn build` and `yarn test` getting applied for this package.
+
+### Repository scripts
+
+These scripts affect the entire project rather than individual packages:
+
+* `bootstrap`: bootstraps the packages, creating symlinks and Flow setup
+* `build`: runs the `build` script of each package
+* `lint`: runs ESLint in all packages
+* `lint:fix`: fixes possible ESLint rules
+* `test:packages`: runs the `test` script of each package
+* `test:project`: runs the project tests
+* `test`: runs `test:packages` and `test:project`
+* `test:all`: runs `lint` and `test`
+* `start`: runs `lint`, `build` and `test`
+
+Other scripts help with the Flow setup, see the [flow-mono-cli](https://github.com/ImmoweltGroup/flow-mono-cli) documentation for more information.
+
+### Adding a new package
+
+1.  Create a new folder in `packages` with a similar setup to the others (notably make sure to provide `build` and `test` scripts in the new package's `package.json`)
+1.  `yarn add` the dependencies you need in the new package
+1.  Run `yarn bootstrap` in the root folder to ensure the new package is linked with others
 
 ## License
 

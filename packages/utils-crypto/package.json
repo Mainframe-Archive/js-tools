@@ -1,7 +1,7 @@
 {
-  "name": "@mainframe/rpc-base",
+  "name": "@mainframe/utils-crypto",
   "version": "0.1.0",
-  "description": "Base RPC class",
+  "description": "Cryptographic primitives utilities",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
   "author": "Mainframe",
@@ -11,14 +11,14 @@
   ],
   "scripts": {
     "clean": "del lib",
-    "build:js": "babel src --out-dir lib",
+    "build:js": "flow-remove-types src --out-dir lib",
     "build:flow": "flow-copy-source src lib",
     "build": "yarn clean && yarn build:js && yarn build:flow",
     "test": "flow check",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "nanoid": "^1.0.2"
+    "sodium-universal": "^2.0.0"
   },
   "devDependencies": {
     "flow-bin": "^0.72.0"

@@ -13,5 +13,10 @@
     ],
     "flow"
   ],
-  "plugins": ["syntax-class-properties", "transform-class-properties"]
+  "plugins": ["syntax-class-properties", "transform-class-properties"],
+  "env": {
+    "test": {
+      "presets": ["env", "flow"]
+    }
+  }
 }
