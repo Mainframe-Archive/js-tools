@@ -1,7 +1,7 @@
 {
-  "name": "@mainframe/rpc-ws-node",
-  "version": "0.2.2",
-  "description": "WebSocket RPC for node",
+  "name": "@mainframe/utils-base64",
+  "version": "0.1.0",
+  "description": "Base64 encoding utilities",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
   "author": "Mainframe",
@@ -14,10 +14,6 @@
     "build": "yarn clean && yarn build:js && yarn build:flow",
     "test": "flow check",
     "prepublishOnly": "yarn build"
-  },
-  "dependencies": {
-    "@mainframe/rpc-stream": "^0.2.1",
-    "@mainframe/transport-ws-node": "^0.3.0"
   },
   "devDependencies": {
     "flow-bin": "^0.72.0"

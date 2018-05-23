@@ -1,6 +1,6 @@
 // @flow
 
-import nanoid from 'nanoid'
+import { uniqueID, type ID } from '@mainframe/utils-id'
 
 export default class BaseRPC {
   _canSubscribe: boolean
@@ -13,8 +13,8 @@ export default class BaseRPC {
     return this._canSubscribe
   }
 
-  createId(): string {
-    return nanoid()
+  createId(): ID {
+    return uniqueID()
   }
 
   request(...args: *): Promise<any> {

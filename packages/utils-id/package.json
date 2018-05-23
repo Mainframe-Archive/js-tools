@@ -1,7 +1,7 @@
 {
-  "name": "@mainframe/rpc-ws-node",
-  "version": "0.2.2",
-  "description": "WebSocket RPC for node",
+  "name": "@mainframe/utils-id",
+  "version": "0.1.0",
+  "description": "Unique identifier utilities",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
   "author": "Mainframe",
@@ -16,8 +16,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@mainframe/rpc-stream": "^0.2.1",
-    "@mainframe/transport-ws-node": "^0.3.0"
+    "nanoid": "^1.0.2"
   },
   "devDependencies": {
     "flow-bin": "^0.72.0"

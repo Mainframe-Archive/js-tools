@@ -27,8 +27,10 @@ Shared JS libraries for various Mainframe projects.
 | [`@mainframe/transport-ws-browser`](/packages/transport-ws-browser) | [![npm version](https://img.shields.io/npm/v/@mainframe/transport-ws-browser.svg)](https://www.npmjs.com/package/@mainframe/transport-ws-browser) | WebSocket transport for browser
 | [`@mainframe/transport-ws-node`](/packages/transport-ws-node) | [![npm version](https://img.shields.io/npm/v/@mainframe/transport-ws-node.svg)](https://www.npmjs.com/package/@mainframe/transport-ws-node) | WebSocket transport for node
 | **Utilities**
+| [`@mainframe/utils-base64`](/packages/utils-base64) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-base64.svg)](https://www.npmjs.com/package/@mainframe/utils-base64) | Base64 strings encoding and decoding
 | [`@mainframe/utils-crypto`](/packages/utils-crypto) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-crypto.svg)](https://www.npmjs.com/package/@mainframe/utils-crypto) | Cryptographic primitives
 | [`@mainframe/utils-hex`](/packages/utils-hex) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-hex.svg)](https://www.npmjs.com/package/@mainframe/utils-hex) | Hexadecimal strings encoding and decoding
+| [`@mainframe/utils-id`](/packages/utils-id) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-id.svg)](https://www.npmjs.com/package/@mainframe/utils-id) | Unique identifier utilities.
 
 ## Development
 

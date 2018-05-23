@@ -1,14 +1,12 @@
 {
   "name": "@mainframe/transport-ws-node",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "WebSocket transport for node",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
   "author": "Mainframe",
   "license": "MIT",
-  "files": [
-    "lib/*"
-  ],
+  "files": ["lib/*"],
   "scripts": {
     "clean": "del lib",
     "build:js": "flow-remove-types src --out-dir lib",
@@ -18,13 +16,13 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "ws": "^5.1.1"
+    "ws": "^5.2.0"
   },
   "peerDependencies": {
-    "rxjs": "^6.0.0"
+    "rxjs": "^6.2.0"
   },
   "devDependencies": {
     "flow-bin": "^0.72.0",
-    "rxjs": "^6.0.0"
+    "rxjs": "^6.2.0"
   }
 }

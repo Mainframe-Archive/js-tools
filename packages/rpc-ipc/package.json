@@ -6,9 +6,7 @@
   "main": "lib/index.js",
   "author": "Mainframe",
   "license": "MIT",
-  "files": [
-    "lib/*"
-  ],
+  "files": ["lib/*"],
   "scripts": {
     "clean": "del lib",
     "build:js": "flow-remove-types src --out-dir lib",
