@@ -27,6 +27,7 @@ Shared JS libraries for various Mainframe projects.
 | [`@mainframe/transport-ws-browser`](/packages/transport-ws-browser) | [![npm version](https://img.shields.io/npm/v/@mainframe/transport-ws-browser.svg)](https://www.npmjs.com/package/@mainframe/transport-ws-browser) | WebSocket transport for browser
 | [`@mainframe/transport-ws-node`](/packages/transport-ws-node) | [![npm version](https://img.shields.io/npm/v/@mainframe/transport-ws-node.svg)](https://www.npmjs.com/package/@mainframe/transport-ws-node) | WebSocket transport for node
 | **Utilities**
+| [`@mainframe/rpc-error`](/packages/rpc-error) | [![npm version](https://img.shields.io/npm/v/@mainframe/rpc-error.svg)](https://www.npmjs.com/package/@mainframe/rpc-error) | RPC error class and utilities
 | [`@mainframe/utils-base64`](/packages/utils-base64) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-base64.svg)](https://www.npmjs.com/package/@mainframe/utils-base64) | Base64 strings encoding and decoding
 | [`@mainframe/utils-crypto`](/packages/utils-crypto) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-crypto.svg)](https://www.npmjs.com/package/@mainframe/utils-crypto) | Cryptographic primitives
 | [`@mainframe/utils-hex`](/packages/utils-hex) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-hex.svg)](https://www.npmjs.com/package/@mainframe/utils-hex) | Hexadecimal strings encoding and decoding
@@ -59,7 +60,7 @@ These scripts affect the entire project rather than individual packages:
 * `test:project`: runs the project tests
 * `test`: runs `test:packages` and `test:project`
 * `test:all`: runs `lint` and `test`
-* `start`: runs `lint`, `build` and `test`
+* `start`: runs `build` and `test:all`
 
 Other scripts help with the Flow setup, see the [flow-mono-cli](https://github.com/ImmoweltGroup/flow-mono-cli) documentation for more information.
 
