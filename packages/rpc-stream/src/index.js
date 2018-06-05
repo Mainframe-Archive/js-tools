@@ -3,6 +3,7 @@
 import { Observable, type Subject, Subscriber, type Subscription } from 'rxjs'
 
 import BaseRPC from '@mainframe/rpc-base'
+import RPCError from '@mainframe/rpc-error'
 
 export default class StreamRPC extends BaseRPC {
   _observers: Map<string, Subscriber<*>>
@@ -29,8 +30,7 @@ export default class StreamRPC extends BaseRPC {
           const observer = this._observers.get(msg.id)
           if (observer) {
             if (msg.error) {
-              const err: Object = new Error(msg.error.message)
-              err.code = msg.error.code
+              const err = RPCError.fromObject(msg.error)
               observer.error(err)
               this._observers.delete(msg.id)
             } else {
@@ -62,6 +62,10 @@ export default class StreamRPC extends BaseRPC {
         this._subscribers.clear()
       },
     })
+  }
+
+  disconnect() {
+    this._transport.complete()
   }
 
   observe(method: string, params?: any): Observable<any> {

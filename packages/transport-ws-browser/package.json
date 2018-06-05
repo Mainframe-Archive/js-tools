@@ -6,7 +6,9 @@
   "main": "lib/index.js",
   "author": "Mainframe",
   "license": "MIT",
-  "files": ["lib/*"],
+  "files": [
+    "lib/*"
+  ],
   "scripts": {
     "clean": "del lib",
     "build:js": "flow-remove-types src --out-dir lib",
@@ -19,7 +21,7 @@
     "rxjs": "^6.0.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.72.0",
+    "flow-bin": "^0.73.0",
     "rxjs": "^6.0.0"
   }
 }

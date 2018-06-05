@@ -1,5 +1,6 @@
 // @flow
 
+// eslint-disable-next-line import/named
 import { uniqueID, type ID } from '@mainframe/utils-id'
 
 export default class BaseRPC {

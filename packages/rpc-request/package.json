@@ -1,14 +1,12 @@
 {
   "name": "@mainframe/rpc-request",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Request-based RPC",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
   "author": "Mainframe",
   "license": "MIT",
-  "files": [
-    "lib/*"
-  ],
+  "files": ["lib/*"],
   "scripts": {
     "clean": "del lib",
     "build:js": "flow-remove-types src --out-dir lib",
@@ -18,9 +16,10 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@mainframe/rpc-base": "^0.1.0"
+    "@mainframe/rpc-base": "^0.1.0",
+    "@mainframe/rpc-error": "^0.1.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.72.0"
+    "flow-bin": "^0.73.0"
   }
 }

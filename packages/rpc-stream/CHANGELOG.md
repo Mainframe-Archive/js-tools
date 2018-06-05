@@ -1,3 +1,7 @@
+## v0.2.2 (2018-06-05)
+
+Use `rpc-error` and add `disconnect()` method.
+
 ## v0.2.1 (2018-05-01)
 
 Fixed message serialization.

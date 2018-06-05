@@ -1,14 +1,12 @@
 {
-  "name": "@mainframe/transport-http-node",
+  "name": "@mainframe/rpc-error",
   "version": "0.1.0",
-  "description": "HTTP transport for node",
+  "description": "JSON-RPC error",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
   "author": "Mainframe",
   "license": "MIT",
-  "files": [
-    "lib/*"
-  ],
+  "files": ["lib/*"],
   "scripts": {
     "clean": "del lib",
     "build:js": "flow-remove-types src --out-dir lib",
@@ -18,8 +16,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@mainframe/transport-create-http": "^0.1.0",
-    "node-fetch": "^2.1.2"
+    "es6-error": "^4.1.1"
   },
   "devDependencies": {
     "flow-bin": "^0.73.0"

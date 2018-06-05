@@ -22,6 +22,6 @@
     "@mainframe/transport-http-browser": "^0.1.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.72.0"
+    "flow-bin": "^0.73.0"
   }
 }

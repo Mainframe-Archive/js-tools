@@ -1,6 +1,7 @@
 // @flow
 
 import BaseRPC from '@mainframe/rpc-base'
+import RPCError from '@mainframe/rpc-error'
 
 export default class RequestRPC extends BaseRPC {
   _fetch: (data: Object) => Promise<Object>
@@ -18,9 +19,7 @@ export default class RequestRPC extends BaseRPC {
       params,
     }).then(msg => {
       if (msg.error) {
-        const err: Object = new Error(msg.error.message)
-        err.code = msg.error.code
-        throw err
+        throw RPCError.fromObject(msg.error)
       }
       return msg.result
     })
