@@ -3,9 +3,12 @@
 import sodium from 'sodium-universal'
 import type { Readable } from 'stream'
 
+export const GENERICHASH_BYTES_MAX: number = sodium.crypto_generichash_BYTES_MAX
+export const GENERICHASH_BYTES_MIN: number = sodium.crypto_generichash_BYTES_MIN
+
 export const hash = (
   input: Buffer,
-  size: number = sodium.crypto_generichash_BYTES_MIN,
+  size: number = GENERICHASH_BYTES_MIN,
   key?: Buffer,
 ): Buffer => {
   const output = Buffer.allocUnsafe(size)

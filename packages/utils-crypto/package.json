@@ -1,14 +1,12 @@
 {
   "name": "@mainframe/utils-crypto",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Cryptographic primitives utilities",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
   "author": "Mainframe",
   "license": "MIT",
-  "files": [
-    "lib/*"
-  ],
+  "files": ["lib/*"],
   "scripts": {
     "clean": "del lib",
     "build:js": "flow-remove-types src --out-dir lib",

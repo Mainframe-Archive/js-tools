@@ -42,6 +42,26 @@ Creates a `KeyPair` for encryption, using the optionally provided `seed` to gene
 
 **Returns** `KeyPair`
 
+### createBoxPublicFromSign()
+
+Converts a public signing key to an encryption one.
+
+**Arguments**
+
+1.  `signKey: Buffer`
+
+**Returns** public encryption key `Buffer`
+
+### createBoxKeyPairFromSign()
+
+Converts a signing `KeyPair` to an encryption one.
+
+**Arguments**
+
+1.  `signPair: KeyPair`
+
+**Returns** encryption `KeyPair`
+
 ### encryptBox()
 
 Creates an `EncryptedBox` of the provided `data` using the `fromSecretKey` so it can be decrypted by the owner of the `forPublicKey`.
@@ -68,9 +88,23 @@ Decrypts the provided `EncryptedBox` using the `fromPublicKey` and `forSecretKey
 
 ### createSecretBoxKey()
 
-Creates a random key to be used to encrypt data in a secret box.
+Creates a random secret box encryption key.
 
 **Returns** `Buffer`
+
+### createSecretBoxKeyFromPassword()
+
+Creates a secret box encryption key from the provided `password` and other arguments. See [hashPassword()](#hashPassword) for more details about the arguments values.
+
+**Arguments**
+
+1.  `password: Buffer`
+1.  `salt: Buffer`
+1.  `opslimit?: number`, defaults to `PASSWORDHASH_OPSLIMIT_SENSITIVE`
+1.  `memlimit?: number`, defaults to `PASSWORDHASH_MEMLIMIT_SENSITIVE`
+1.  `algorithm?: number`
+
+**Returns** `Promise<Buffer>`
 
 ### encryptSecretBox()
 
@@ -114,6 +148,21 @@ Hashes the provided readable `stream` to a buffer of the optional `size`.
 
 1.  `stream: Readable`
 1.  `size?: number`
+
+**Returns** `Promise<Buffer>`
+
+### hashPassword()
+
+Hashes the provided `password` to the `hash` buffer.
+
+**Arguments**
+
+1.  `hash: Buffer` with length between `PASSWORDHASH_BYTES_MIN` (`crypto_pwhash_BYTES_MIN`) and `PASSWORDHASH_BYTES_MAX` (`crypto_pwhash_BYTES_MAX`)
+1.  `password: Buffer`
+1.  `salt: Buffer` with length `PASSWORDHASH_SALT_BYTES` (`crypto_pwhash_SALTBYTES`)
+1.  `opslimit?: number` between `PASSWORDHASH_OPSLIMIT_MIN` (`crypto_pwhash_OPSLIMIT_MIN`) and `PASSWORDHASH_OPSLIMIT_MAX` (`crypto_pwhash_OPSLIMIT_MAX`), defaults to `PASSWORDHASH_OPSLIMIT_MODERATE` (`crypto_pwhash_OPSLIMIT_MODERATE`)
+1.  `memlimit?: number` between `PASSWORDHASH_MEMLIMIT_MIN` (`crypto_pwhash_MEMLIMIT_MIN`) and `PASSWORDHASH_MEMLIMIT_MAX` (`crypto_pwhash_MEMLIMIT_MAX`), defaults to `PASSWORDHASH_MEMLIMIT_MODERATE` (`crypto_pwhash_MEMLIMIT_MODERATE`)
+1.  `algorithm?: number`, defaults to `PASSWORDHASH_ALG_DEFAULT` (`crypto_pwhash_ALG_DEFAULT`)
 
 **Returns** `Promise<Buffer>`
 
