@@ -2,6 +2,8 @@
 
 import sodium from 'sodium-universal'
 
+import { randomBytes } from './random'
+
 export const PASSWORDHASH_ALG_ARGON2I13: number =
   sodium.crypto_pwhash_ALG_ARGON2I13
 export const PASSWORDHASH_ALG_ARGON2ID13: number =
@@ -29,13 +31,17 @@ export const PASSWORDHASH_OPSLIMIT_SENSITIVE: number =
   sodium.crypto_pwhash_OPSLIMIT_SENSITIVE
 export const PASSWORDHASH_SALTBYTES: number = sodium.crypto_pwhash_SALTBYTES
 
+export const createPasswordHashSalt = (): Buffer => {
+  return randomBytes(PASSWORDHASH_SALTBYTES)
+}
+
 export const hashPassword = (
   hash: Buffer,
   password: Buffer,
   salt: Buffer,
   opslimit?: number = PASSWORDHASH_OPSLIMIT_MODERATE,
   memlimit?: number = PASSWORDHASH_MEMLIMIT_MODERATE,
-  algorithm?: number = PASSWORDHASH_ALG_DEFAULT,
+  algorithm?: number = PASSWORDHASH_ALG_ARGON2ID13,
 ): Promise<Buffer> => {
   return new Promise((resolve, reject) => {
     try {

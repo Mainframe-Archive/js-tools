@@ -1,4 +1,4 @@
-## rpc-ws-node
+# rpc-ws-node
 
 [`rpc-stream`](../rpc-stream) factory using [`transport-ws-node`](../transport-ws-node).
 

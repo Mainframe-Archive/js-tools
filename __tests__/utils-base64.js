@@ -1,4 +1,4 @@
-import { encodeBase64, decodeBase64 } from '../packages/utils-base64/src'
+import { encodeBase64, decodeBase64 } from '../packages/utils-base64'
 
 describe('utils-base64', () => {
   const test = Buffer.from('test')

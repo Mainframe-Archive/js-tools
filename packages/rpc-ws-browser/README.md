@@ -1,4 +1,4 @@
-## rpc-ws-browser
+# rpc-ws-browser
 
 [`rpc-stream`](../rpc-stream) factory using [`transport-ws-browser`](../transport-ws-browser).
 

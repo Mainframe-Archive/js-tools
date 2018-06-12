@@ -1,4 +1,4 @@
-## transport-ws-node
+# transport-ws-node
 
 WebSocket transport for node as a [RxJS `Subject`](http://reactivex.io/rxjs/class/es6/Subject.js~Subject.html).
 

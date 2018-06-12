@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`secure-file hash createFileHash() returns the hash of the file 1`] = `
+Object {
+  "data": Array [
+    66,
+    187,
+    169,
+    39,
+    89,
+    87,
+    112,
+    162,
+    210,
+    251,
+    146,
+    61,
+    231,
+    97,
+    174,
+    154,
+    191,
+    86,
+    15,
+    152,
+    16,
+    7,
+    229,
+    105,
+    95,
+    7,
+    14,
+    78,
+    42,
+    22,
+    142,
+    201,
+  ],
+  "type": "Buffer",
+}
+`;

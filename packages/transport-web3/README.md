@@ -1,4 +1,4 @@
-## transport-web3
+# transport-web3
 
 Web3 transport for browser as a [RxJS `Subject`](http://reactivex.io/rxjs/class/es6/Subject.js~Subject.html).
 

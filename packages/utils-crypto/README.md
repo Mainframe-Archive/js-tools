@@ -1,4 +1,4 @@
-## utils-crypto
+# utils-crypto
 
 Cryptographic primitives using [sodium](https://github.com/sodium-friends/sodium-universal).
 
@@ -90,7 +90,7 @@ Decrypts the provided `EncryptedBox` using the `fromPublicKey` and `forSecretKey
 
 Creates a random secret box encryption key.
 
-**Returns** `Buffer`
+**Returns** `Buffer` with length `SECRETBOX_KEYBYTES` (`crypto_secretbox_KEYBYTES`)
 
 ### createSecretBoxKeyFromPassword()
 
@@ -151,6 +151,12 @@ Hashes the provided readable `stream` to a buffer of the optional `size`.
 
 **Returns** `Promise<Buffer>`
 
+### createPasswordHashSalt()
+
+Creates a random salt for password hashing.
+
+**Returns** `Buffer` with length `PASSWORDHASH_SALT_BYTES` (`crypto_pwhash_SALTBYTES`)
+
 ### hashPassword()
 
 Hashes the provided `password` to the `hash` buffer.
@@ -162,7 +168,7 @@ Hashes the provided `password` to the `hash` buffer.
 1.  `salt: Buffer` with length `PASSWORDHASH_SALT_BYTES` (`crypto_pwhash_SALTBYTES`)
 1.  `opslimit?: number` between `PASSWORDHASH_OPSLIMIT_MIN` (`crypto_pwhash_OPSLIMIT_MIN`) and `PASSWORDHASH_OPSLIMIT_MAX` (`crypto_pwhash_OPSLIMIT_MAX`), defaults to `PASSWORDHASH_OPSLIMIT_MODERATE` (`crypto_pwhash_OPSLIMIT_MODERATE`)
 1.  `memlimit?: number` between `PASSWORDHASH_MEMLIMIT_MIN` (`crypto_pwhash_MEMLIMIT_MIN`) and `PASSWORDHASH_MEMLIMIT_MAX` (`crypto_pwhash_MEMLIMIT_MAX`), defaults to `PASSWORDHASH_MEMLIMIT_MODERATE` (`crypto_pwhash_MEMLIMIT_MODERATE`)
-1.  `algorithm?: number`, defaults to `PASSWORDHASH_ALG_DEFAULT` (`crypto_pwhash_ALG_DEFAULT`)
+1.  `algorithm?: number`, defaults to `PASSWORDHASH_ALG_ARGON2ID13` (`crypto_pwhash_ALG_ARGON2ID13`)
 
 **Returns** `Promise<Buffer>`
 

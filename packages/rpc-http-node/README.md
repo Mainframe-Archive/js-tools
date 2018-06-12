@@ -1,4 +1,4 @@
-## rpc-http-node
+# rpc-http-node
 
 [`rpc-request`](../rpc-request) factory using [`transport-http-node`](../transport-http-node).
 

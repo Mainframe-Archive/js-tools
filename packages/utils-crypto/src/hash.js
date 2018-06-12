@@ -3,12 +3,13 @@
 import sodium from 'sodium-universal'
 import type { Readable } from 'stream'
 
+export const GENERICHASH_BYTES: number = sodium.crypto_generichash_BYTES
 export const GENERICHASH_BYTES_MAX: number = sodium.crypto_generichash_BYTES_MAX
 export const GENERICHASH_BYTES_MIN: number = sodium.crypto_generichash_BYTES_MIN
 
 export const hash = (
   input: Buffer,
-  size: number = GENERICHASH_BYTES_MIN,
+  size?: number = GENERICHASH_BYTES,
   key?: Buffer,
 ): Buffer => {
   const output = Buffer.allocUnsafe(size)
@@ -18,7 +19,7 @@ export const hash = (
 
 export const hashStream = (
   stream: Readable,
-  size: number = 32,
+  size?: number = GENERICHASH_BYTES,
 ): Promise<Buffer> => {
   const instance = sodium.crypto_generichash_instance(null, size)
   return new Promise((resolve, reject) => {

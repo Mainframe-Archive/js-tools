@@ -23,6 +23,6 @@
     "@mainframe/rpc-ws-browser": "^0.2.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.73.0"
+    "flow-bin": "^0.74.0"
   }
 }

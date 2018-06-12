@@ -1,4 +1,4 @@
-## transport-ws-browser
+# transport-ws-browser
 
 WebSocket transport for browser as a [RxJS `Subject`](http://reactivex.io/rxjs/class/es6/Subject.js~Subject.html).
 

@@ -26,6 +26,8 @@ Shared JS libraries for various Mainframe projects.
 | [`@mainframe/transport-web3`](/packages/transport-web3) | [![npm version](https://img.shields.io/npm/v/@mainframe/transport-web3.svg)](https://www.npmjs.com/package/@mainframe/transport-web3) | Web3 transport (browser only)
 | [`@mainframe/transport-ws-browser`](/packages/transport-ws-browser) | [![npm version](https://img.shields.io/npm/v/@mainframe/transport-ws-browser.svg)](https://www.npmjs.com/package/@mainframe/transport-ws-browser) | WebSocket transport for browser
 | [`@mainframe/transport-ws-node`](/packages/transport-ws-node) | [![npm version](https://img.shields.io/npm/v/@mainframe/transport-ws-node.svg)](https://www.npmjs.com/package/@mainframe/transport-ws-node) | WebSocket transport for node
+| **Security**
+| [`@mainframe/secure-file`](/packages/secure-file) | [![npm version](https://img.shields.io/npm/v/@mainframe/secure-file.svg)](https://www.npmjs.com/package/@mainframe/secure-file) | Cryptographic utilities for files
 | **Utilities**
 | [`@mainframe/rpc-error`](/packages/rpc-error) | [![npm version](https://img.shields.io/npm/v/@mainframe/rpc-error.svg)](https://www.npmjs.com/package/@mainframe/rpc-error) | RPC error class and utilities
 | [`@mainframe/utils-base64`](/packages/utils-base64) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-base64.svg)](https://www.npmjs.com/package/@mainframe/utils-base64) | Base64 strings encoding and decoding
@@ -52,15 +54,15 @@ In the package you want to work on, you can run the local commands such as `yarn
 
 These scripts affect the entire project rather than individual packages:
 
-* `bootstrap`: bootstraps the packages, creating symlinks and Flow setup
-* `build`: runs the `build` script of each package
-* `lint`: runs ESLint in all packages
-* `lint:fix`: fixes possible ESLint rules
-* `test:packages`: runs the `test` script of each package
-* `test:project`: runs the project tests
-* `test`: runs `test:packages` and `test:project`
-* `test:all`: runs `lint` and `test`
-* `start`: runs `build` and `test:all`
+- `bootstrap`: bootstraps the packages, creating symlinks and Flow setup
+- `build`: runs the `build` script of each package
+- `lint`: runs ESLint in all packages
+- `lint:fix`: fixes possible ESLint rules
+- `test:packages`: runs the `test` script of each package
+- `test:project`: runs the project tests
+- `test`: runs `test:packages` and `test:project`
+- `test:all`: runs `lint` and `test`
+- `start`: runs `build` and `test:all`
 
 Other scripts help with the Flow setup, see the [flow-mono-cli](https://github.com/ImmoweltGroup/flow-mono-cli) documentation for more information.
 

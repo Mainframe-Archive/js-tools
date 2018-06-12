@@ -1,4 +1,4 @@
-## transport-create-http
+# transport-create-http
 
 HTTP transport factory. Used by [`transport-http-browser`]('../transport-http-browser') and [`transport-http-node`]('../transport-http-node').
 

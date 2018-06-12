@@ -1,4 +1,4 @@
-## rpc-ipc
+# rpc-ipc
 
 [`rpc-stream`](../rpc-stream) factory using [`transport-ipc`](../transport-ipc).
 

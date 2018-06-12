@@ -1,4 +1,4 @@
-## rpc-http-browser
+# rpc-http-browser
 
 [`rpc-request`](../rpc-request) factory using [`transport-http-browser`](../transport-http-browser).
 

@@ -1,4 +1,4 @@
-## rpc-web3
+# rpc-web3
 
 [`rpc-request`](../rpc-request) factory using [`transport-web3`](../transport-web3).
 

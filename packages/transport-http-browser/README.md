@@ -1,4 +1,4 @@
-## transport-http-browser
+# transport-http-browser
 
 HTTP transport for browser.
 

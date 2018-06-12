@@ -1,4 +1,4 @@
-## rpc-node
+# rpc-node
 
 [`rpc-request`](../rpc-request) or [`rpc-stream`](../rpc-stream) factory with automatic transport selection.
 
