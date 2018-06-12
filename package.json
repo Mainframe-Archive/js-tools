@@ -30,7 +30,8 @@
     "bootstrap": "lerna bootstrap && yarn flow:bootstrap",
     "lint": "eslint packages/*/src",
     "lint:fix": "yarn lint --fix",
-    "test:project": "jest",
+    "test:project": "jest --config jest.config.js",
+    "test:ci": "jest --ci --config jest.config.ci.js --runInBand",
     "test:packages": "lerna run test",
     "test": "yarn test:packages && yarn test:project",
     "test:all": "yarn lint && yarn test",
@@ -55,11 +56,8 @@
     "flow-remove-types": "^1.2.3",
     "flow-typed": "^2.4.0",
     "jest": "^23.1.0",
+    "jest-junit": "^5.0.0",
     "lerna": "^2.11.0",
     "prettier": "^1.13.5"
-  },
-  "jest": {
-    "bail": true,
-    "collectCoverage": true
   }
 }
