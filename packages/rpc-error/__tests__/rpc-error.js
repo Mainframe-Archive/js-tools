@@ -7,7 +7,7 @@ import RPCError, {
   methodNotFound,
   invalidParams,
   internalError,
-} from '../packages/rpc-error'
+} from '..'
 
 describe('rpc-error', () => {
   it('sets the code, message and data', () => {

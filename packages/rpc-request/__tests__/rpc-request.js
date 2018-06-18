@@ -1,5 +1,5 @@
-import RPCError from '../packages/rpc-error'
-import RequestRPC from '../packages/rpc-request'
+import RPCError from '../../rpc-error'
+import RequestRPC from '..'
 
 describe('rpc-request', () => {
   it('calls the _fetch() method with the required parameters', async () => {

@@ -1,4 +1,4 @@
-import { hexEmpty, encodeHex, decodeHex } from '../packages/utils-hex'
+import { hexEmpty, encodeHex, decodeHex } from '..'
 
 describe('utils-hex', () => {
   it('hexEmpty is an empty hex string', () => {

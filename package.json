@@ -30,13 +30,12 @@
     "bootstrap": "lerna bootstrap && yarn flow:bootstrap",
     "lint": "eslint packages/*/src",
     "lint:fix": "yarn lint --fix",
-    "test:project": "jest --config jest.config.js",
+    "test:unit": "jest --config jest.config.js",
     "test:ci": "jest --ci --config jest.config.ci.js --runInBand",
-    "test:packages": "lerna run test",
-    "test": "yarn test:packages && yarn test:project",
-    "test:all": "yarn lint && yarn test",
+    "test:types": "lerna run test:types",
+    "test": "yarn lint && yarn test:types && yarn test:unit",
     "build": "lerna run build",
-    "start": "yarn build && yarn test:all"
+    "start": "yarn build && yarn test"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

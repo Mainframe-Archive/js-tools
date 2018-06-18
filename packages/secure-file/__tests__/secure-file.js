@@ -15,8 +15,8 @@ import {
   writeEncryptedFile,
   writeSecureFile,
   writeSignedFile,
-} from '../packages/secure-file'
-import { decodeBase64, encodeBase64 } from '../packages/utils-base64'
+} from '..'
+import { decodeBase64, encodeBase64 } from '../../utils-base64'
 import {
   PASSWORDHASH_ALG_ARGON2ID13,
   PASSWORDHASH_MEMLIMIT_MIN,
@@ -25,10 +25,10 @@ import {
   createSecretBoxKey,
   createSecretBoxKeyFromPassword,
   createSignKeyPair,
-} from '../packages/utils-crypto'
+} from '../../utils-crypto'
 
 const getFixture = name => {
-  return resolve(__dirname, '__fixtures__/secure-file', name)
+  return resolve(__dirname, '__fixtures__', name)
 }
 const getTempFile = name => join(tmpdir(), 'mf-secure-file-test', name)
 

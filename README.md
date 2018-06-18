@@ -58,17 +58,16 @@ These scripts affect the entire project rather than individual packages:
 - `build`: runs the `build` script of each package
 - `lint`: runs ESLint in all packages
 - `lint:fix`: fixes possible ESLint rules
-- `test:packages`: runs the `test` script of each package
-- `test:project`: runs the project tests
-- `test`: runs `test:packages` and `test:project`
-- `test:all`: runs `lint` and `test`
-- `start`: runs `build` and `test:all`
+- `test:types`: runs the `test:types` script of each package (`flow check`)
+- `test:unit`: runs Jest in the entire project
+- `test`: runs `lint`, `test:types` and `test:unit`
+- `start`: runs `build` and `test`
 
 Other scripts help with the Flow setup, see the [flow-mono-cli](https://github.com/ImmoweltGroup/flow-mono-cli) documentation for more information.
 
 ### Adding a new package
 
-1.  Create a new folder in `packages` with a similar setup to the others (notably make sure to provide `build` and `test` scripts in the new package's `package.json`)
+1.  Create a new folder in `packages` with a similar setup to the others (notably make sure to provide `build` and `test:types` scripts in the new package's `package.json`)
 1.  `yarn add` the dependencies you need in the new package
 1.  Run `yarn bootstrap` in the root folder to ensure the new package is linked with others
 

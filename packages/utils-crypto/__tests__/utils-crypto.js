@@ -35,7 +35,7 @@ import {
   secureRandomBytes,
   sign,
   verifySignature,
-} from '../packages/utils-crypto'
+} from '..'
 
 class StreamToRead extends Readable {
   constructor(data) {

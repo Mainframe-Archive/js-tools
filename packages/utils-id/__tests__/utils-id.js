@@ -1,4 +1,4 @@
-import { uniqueID } from '../packages/utils-id'
+import { uniqueID } from '..'
 
 describe('utils-id', () => {
   it('uniqueID() generates an unique string', () => {

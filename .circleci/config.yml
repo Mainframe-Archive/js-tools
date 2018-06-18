@@ -15,14 +15,14 @@ jobs:
             - v1-dependencies-
       - run:
           name: Setup
-          command: yarn bootstrap
+          command: yarn install && yarn bootstrap
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: Build and check
-          command: yarn build && yarn lint && yarn test:packages
+          command: yarn build && yarn lint && yarn test:types
       - run:
           name: Project tests
           command: yarn test:ci

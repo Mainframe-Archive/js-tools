@@ -1,4 +1,4 @@
-import BaseRPC from '../packages/rpc-base'
+import BaseRPC from '..'
 
 describe('rpc-base', () => {
   it('has a canSubscribe getter depending on constructor value', () => {

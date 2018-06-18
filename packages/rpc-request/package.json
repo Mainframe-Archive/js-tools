@@ -14,7 +14,8 @@
     "build:js": "flow-remove-types src --out-dir lib",
     "build:flow": "flow-copy-source src lib",
     "build": "yarn clean && yarn build:js && yarn build:flow",
-    "test": "flow check",
+    "test:types": "flow check",
+    "test:unit": "jest",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
