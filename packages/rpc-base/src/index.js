@@ -18,7 +18,7 @@ export default class BaseRPC {
     return uniqueID()
   }
 
-  request(...args: *): Promise<any> {
+  request(): Promise<any> {
     return Promise.reject(new Error('Must be implemented'))
   }
 }

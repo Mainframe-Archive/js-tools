@@ -1,3 +1,7 @@
+## v0.2.3 (2018-07-02)
+
+Throw errors when transport is disconnected.
+
 ## v0.2.2 (2018-06-05)
 
 Use `rpc-error` and add `disconnect()` method.

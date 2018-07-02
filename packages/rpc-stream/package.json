@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/rpc-stream",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Stream-based RPC",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
@@ -25,7 +25,7 @@
     "rxjs": "^6.0.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.74.0",
+    "flow-bin": "^0.75.0",
     "rxjs": "^6.0.0"
   }
 }

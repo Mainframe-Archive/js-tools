@@ -11,7 +11,6 @@ import { readSecureFile, writeSecureFile } from './fs'
 import type {
   EncodedBox,
   EncryptedContents,
-  SecureContents,
   SecureFile,
   OpenedSecureFile,
   KeyExtractor,

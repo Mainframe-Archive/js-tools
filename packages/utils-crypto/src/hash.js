@@ -1,7 +1,7 @@
 // @flow
 
-import sodium from 'sodium-universal'
 import type { Readable } from 'stream'
+import sodium from 'sodium-universal'
 
 export const GENERICHASH_BYTES: number = sodium.crypto_generichash_BYTES
 export const GENERICHASH_BYTES_MAX: number = sodium.crypto_generichash_BYTES_MAX

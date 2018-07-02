@@ -1,4 +1,5 @@
 // @flow
+/* eslint-env browser */
 
 import createHTTP from '@mainframe/transport-create-http'
 

@@ -1,7 +1,6 @@
 // @flow
 
 import type { base64 } from '@mainframe/utils-base64'
-import type { EncryptedBox, KeyPair } from '@mainframe/utils-crypto'
 
 export type EncodedBox = {
   cipher: base64,

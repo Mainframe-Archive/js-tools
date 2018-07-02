@@ -8,11 +8,7 @@ import {
 } from '@mainframe/utils-crypto'
 
 import { readSecureFile, writeSecureFile } from './fs'
-import type {
-  EncryptedContents,
-  SignedContents,
-  OpenedSecureFile,
-} from './types'
+import type { SignedContents, OpenedSecureFile } from './types'
 
 export const verifyContents = (
   contents: SignedContents,

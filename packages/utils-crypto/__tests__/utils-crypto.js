@@ -194,6 +194,7 @@ describe('utils-crypto', () => {
     })
 
     it('hashPassword() hashed a password into the provided buffer', async () => {
+      jest.setTimeout(10000)
       const hash = Buffer.allocUnsafe(24) // Will be mutated
       const hashClone = Buffer.from(hash)
       expect(hash.equals(hashClone)).toBe(true)

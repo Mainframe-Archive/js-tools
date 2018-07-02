@@ -1,5 +1,5 @@
 import { tmpdir } from 'os'
-import { join, resolve } from 'path'
+import { join } from 'path'
 
 import {
   createFileHash,
@@ -27,9 +27,7 @@ import {
   createSignKeyPair,
 } from '../../utils-crypto'
 
-const getFixture = name => {
-  return resolve(__dirname, '__fixtures__', name)
-}
+const getFixture = name => join(__dirname, '__fixtures__', name)
 const getTempFile = name => join(tmpdir(), 'mf-secure-file-test', name)
 
 describe('secure-file', () => {
@@ -70,7 +68,7 @@ describe('secure-file', () => {
       const contents = Buffer.from('contents')
       const key = createSecretBoxKey()
 
-      const encrypted = await writeEncryptedFile(file, contents, key)
+      await writeEncryptedFile(file, contents, key)
       const decrypted = await readEncryptedFile(file, key)
       expect(contents.equals(decrypted.opened)).toBe(true)
     })
@@ -96,19 +94,14 @@ describe('secure-file', () => {
         salt: encodeBase64(createPasswordHashSalt()),
       }
 
-      const encrypted = await writeEncryptedFile(
-        file,
-        contents,
-        await getKey(metadata),
-        metadata,
-      )
+      await writeEncryptedFile(file, contents, await getKey(metadata), metadata)
       const decrypted = await readEncryptedFile(file, getKey)
       expect(contents.equals(decrypted.opened)).toBe(true)
     })
 
     it('does not provide the opened buffer if decryption fails', async () => {
       const file = getTempFile('encrypt-fail.json')
-      const encrypted = await writeEncryptedFile(
+      await writeEncryptedFile(
         file,
         Buffer.from('contents'),
         createSecretBoxKey(),
@@ -138,7 +131,7 @@ describe('secure-file', () => {
       const file3 = getFixture('3.bad-version.json')
       expect(readSecureFile(file3)).rejects.toThrow('Invalid file')
       const file4 = getFixture('4.no-contents.json')
-      expect(readSecureFile(file1)).rejects.toThrow('Invalid file')
+      expect(readSecureFile(file4)).rejects.toThrow('Invalid file')
     })
   })
 

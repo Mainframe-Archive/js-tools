@@ -8,7 +8,7 @@ import RPCError from '@mainframe/rpc-error'
 export default class StreamRPC extends BaseRPC {
   _observers: Map<string, Subscriber<*>>
   _subscribers: Set<Subscriber<*>>
-  _subscription: Subscription
+  _subscription: ?Subscription
   _transport: Subject<Object>
 
   constructor(transport: Subject<Object>) {
@@ -19,7 +19,17 @@ export default class StreamRPC extends BaseRPC {
     this.connect()
   }
 
+  get connected(): boolean {
+    // $FlowFixMe: missing Subscription.closed property definition
+    return this._subscription != null && !this._subscription.closed
+  }
+
   connect() {
+    if (this.connected) {
+      return
+    }
+
+    let failed
     this._subscription = this._transport.subscribe({
       next: (msg: Object) => {
         if (msg.id == null) {
@@ -37,11 +47,20 @@ export default class StreamRPC extends BaseRPC {
               observer.next(msg.result)
             }
           } else {
+            // eslint-disable-next-line no-console
             console.warn('Missing observer for message ID:', msg.id)
           }
         }
       },
-      error: err => {
+      error: event => {
+        let err
+        if (event instanceof Error) {
+          err = event
+        } else {
+          err = new Error('Connection failed')
+        }
+        failed = err
+
         this._observers.forEach(o => {
           o.error(err)
         })
@@ -62,6 +81,10 @@ export default class StreamRPC extends BaseRPC {
         this._subscribers.clear()
       },
     })
+
+    if (failed != null) {
+      throw failed
+    }
   }
 
   disconnect() {
@@ -82,23 +105,31 @@ export default class StreamRPC extends BaseRPC {
 
   request(method: string, params?: any): Promise<any> {
     return new Promise((resolve, reject) => {
-      const sub = this.observe(method, params).subscribe(
-        value => {
-          sub.unsubscribe()
-          resolve(value)
-        },
-        err => {
-          sub.unsubscribe()
-          reject(err)
-        },
-        () => {
-          sub.unsubscribe()
-        },
-      )
+      if (this.connected) {
+        const sub = this.observe(method, params).subscribe(
+          value => {
+            sub.unsubscribe()
+            resolve(value)
+          },
+          err => {
+            sub.unsubscribe()
+            reject(err)
+          },
+          () => {
+            sub.unsubscribe()
+          },
+        )
+      } else {
+        reject(new Error('Not connected'))
+      }
     })
   }
 
   subscribe(...args: Array<*>) {
+    if (!this.connected) {
+      throw new Error('Not connected')
+    }
+
     const subscriber = new Subscriber(...args)
     this._subscribers.add(subscriber)
     return () => {

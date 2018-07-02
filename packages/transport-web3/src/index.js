@@ -1,4 +1,5 @@
 // @flow
+/* eslint-env browser */
 
 export default (maybeProvider?: ?Object) => {
   const provider = maybeProvider || (window.web3 && window.web3.currentProvider)
