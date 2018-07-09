@@ -2,6 +2,6 @@
 
 Export as CommonJS.
 
-## v0.1.0 (2018-06-12)
+## v0.1.0 (2018-04-10)
 
 First release.

@@ -927,7 +927,7 @@ babylon@7.0.0-beta.44:
   version "7.0.0-beta.44"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-7.0.0-beta.44.tgz#89159e15e6e30c5096e22d738d8c0af8a0e8ca1d"
 
-babylon@^6.15.0, babylon@^6.18.0:
+babylon@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
 
@@ -2098,10 +2098,6 @@ eslint@^5.1.0:
     table "^4.0.3"
     text-table "^0.2.0"
 
-esm@^3.0.26:
-  version "3.0.55"
-  resolved "https://registry.yarnpkg.com/esm/-/esm-3.0.55.tgz#db784239760c60b919785953eb3c01cfbc9745d4"
-
 espree@^3.1.3:
   version "3.5.4"
   resolved "https://registry.yarnpkg.com/espree/-/espree-3.5.4.tgz#b0f447187c8a8bed944b815a660bddf5deb5d1a7"
@@ -2408,13 +2404,6 @@ flow-mono-cli@^1.3.3:
     log-fancy "1.3.2"
     micromatch "3.1.10"
     yargs "11.0.0"
-
-flow-remove-types@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-1.2.3.tgz#6131aefc7da43364bb8b479758c9dec7735d1a18"
-  dependencies:
-    babylon "^6.15.0"
-    vlq "^0.2.1"
 
 flow-typed@^2.5.1:
   version "2.5.1"
@@ -5056,11 +5045,9 @@ rx-lite@*, rx-lite@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
 
-rx-socket@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/rx-socket/-/rx-socket-0.3.0.tgz#4be9375abb3029f09f2a5a2fc8cdf10e0a737ee8"
-  dependencies:
-    esm "^3.0.26"
+rx-socket@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/rx-socket/-/rx-socket-0.3.1.tgz#aa8a61af14d73c8a2abfbf22f0450ab30b2de9c3"
 
 rxjs@^5.5.2:
   version "5.5.11"
@@ -5824,10 +5811,6 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
-
-vlq@^0.2.1:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/vlq/-/vlq-0.2.3.tgz#8f3e4328cf63b1540c0d67e1b2778386f8975b26"
 
 w3c-hr-time@^1.0.1:
   version "1.0.1"

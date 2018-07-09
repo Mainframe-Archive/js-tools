@@ -1,3 +1,7 @@
+## v0.2.4 (2018-07-09)
+
+Export as CommonJS and ESM.
+
 ## v0.2.3 (2018-07-02)
 
 Throw errors when transport is disconnected.

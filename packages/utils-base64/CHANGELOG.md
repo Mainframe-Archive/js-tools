@@ -2,6 +2,6 @@
 
 Export as CommonJS and ESM.
 
-## v0.1.0 (2018-06-05)
+## v0.1.0 (2018-05-23)
 
 First release.

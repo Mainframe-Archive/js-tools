@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/secure-file",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Cryptographic utilities for files",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "clean": "del lib",
-    "build:js": "flow-remove-types src --out-dir lib",
+    "build:js": "BABEL_ENV=node babel src --out-dir lib",
     "build:flow": "flow-copy-source src lib",
     "build": "yarn clean && yarn build:js && yarn build:flow",
     "test:types": "flow check",
@@ -19,8 +19,8 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@mainframe/utils-base64": "^0.1.0",
-    "@mainframe/utils-crypto": "^0.2.1",
+    "@mainframe/utils-base64": "^0.1.1",
+    "@mainframe/utils-crypto": "^0.2.2",
     "fs-extra": "^6.0.1"
   },
   "devDependencies": {

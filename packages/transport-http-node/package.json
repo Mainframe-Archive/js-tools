@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/transport-http-node",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "HTTP transport for node",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
@@ -11,14 +11,14 @@
   ],
   "scripts": {
     "clean": "del lib",
-    "build:js": "flow-remove-types src --out-dir lib",
+    "build:js": "BABEL_ENV=node babel src --out-dir lib",
     "build:flow": "flow-copy-source src lib",
     "build": "yarn clean && yarn build:js && yarn build:flow",
     "test:types": "flow check",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@mainframe/transport-create-http": "^0.1.0",
+    "@mainframe/transport-create-http": "^0.1.1",
     "node-fetch": "^2.1.2"
   },
   "devDependencies": {

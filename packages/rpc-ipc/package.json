@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/rpc-ipc",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "IPC RPC for node",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
@@ -11,15 +11,15 @@
   ],
   "scripts": {
     "clean": "del lib",
-    "build:js": "flow-remove-types src --out-dir lib",
+    "build:js": "BABEL_ENV=node babel src --out-dir lib",
     "build:flow": "flow-copy-source src lib",
     "build": "yarn clean && yarn build:js && yarn build:flow",
     "test:types": "flow check",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@mainframe/rpc-stream": "^0.2.0",
-    "@mainframe/transport-ipc": "^0.2.0"
+    "@mainframe/rpc-stream": "^0.2.4",
+    "@mainframe/transport-ipc": "^0.2.1"
   },
   "devDependencies": {
     "flow-bin": "^0.76.0",

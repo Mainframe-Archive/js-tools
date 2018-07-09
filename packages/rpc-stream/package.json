@@ -1,25 +1,29 @@
 {
   "name": "@mainframe/rpc-stream",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Stream-based RPC",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
-  "main": "lib/index.js",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
   "author": "Mainframe",
   "license": "MIT",
   "files": [
-    "lib/*"
+    "cjs/*",
+    "esm/*"
   ],
   "scripts": {
-    "clean": "del lib",
-    "build:js": "flow-remove-types src --out-dir lib",
-    "build:flow": "flow-copy-source src lib",
+    "clean": "del cjs esm",
+    "build:cjs": "BABEL_ENV='browser-cjs' babel src --out-dir cjs",
+    "build:esm": "BABEL_ENV='browser-esm' babel src --out-dir esm",
+    "build:js": "yarn build:cjs && yarn build:esm",
+    "build:flow": "flow-copy-source src cjs && flow-copy-source src esm",
     "build": "yarn clean && yarn build:js && yarn build:flow",
     "test:types": "flow check",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@mainframe/rpc-base": "^0.1.0",
-    "@mainframe/rpc-error": "^0.1.0"
+    "@mainframe/rpc-base": "^0.1.1",
+    "@mainframe/rpc-error": "^0.1.1"
   },
   "peerDependencies": {
     "rxjs": "^6.0.0"
