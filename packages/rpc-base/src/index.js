@@ -18,7 +18,8 @@ export default class BaseRPC {
     return uniqueID()
   }
 
-  request(): Promise<any> {
+  // eslint-disable-next-line no-unused-vars
+  request(method: string, params?: any): Promise<any> {
     return Promise.reject(new Error('Must be implemented'))
   }
 }
