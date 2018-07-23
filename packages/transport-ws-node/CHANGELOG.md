@@ -1,3 +1,7 @@
+## v0.3.2 (2018-07-23)
+
+Update `ws` dependency to v6.
+
 ## v0.3.1 (2018-07-09)
 
 Export as CommonJS and ESM.

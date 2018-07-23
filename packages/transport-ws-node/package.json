@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/transport-ws-node",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "WebSocket transport for node",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
@@ -18,13 +18,13 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "ws": "^5.2.0"
+    "ws": "^6.0.0"
   },
   "peerDependencies": {
     "rxjs": "^6.2.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.76.0",
+    "flow-bin": "^0.77.0",
     "rxjs": "^6.2.0"
   }
 }

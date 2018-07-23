@@ -26,6 +26,6 @@
     "sodium-universal": "^2.0.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.76.0"
+    "flow-bin": "^0.77.0"
   }
 }
