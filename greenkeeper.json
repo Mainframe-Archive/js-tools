@@ -1,0 +1,33 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "packages/rpc-base/package.json",
+        "packages/rpc-browser/package.json",
+        "packages/rpc-error/package.json",
+        "packages/rpc-http-browser/package.json",
+        "packages/rpc-http-node/package.json",
+        "packages/rpc-ipc/package.json",
+        "packages/rpc-node/package.json",
+        "packages/rpc-request/package.json",
+        "packages/rpc-stream/package.json",
+        "packages/rpc-web3/package.json",
+        "packages/rpc-ws-browser/package.json",
+        "packages/rpc-ws-node/package.json",
+        "packages/secure-file/package.json",
+        "packages/transport-create-http/package.json",
+        "packages/transport-http-browser/package.json",
+        "packages/transport-http-node/package.json",
+        "packages/transport-ipc/package.json",
+        "packages/transport-web3/package.json",
+        "packages/transport-ws-browser/package.json",
+        "packages/transport-ws-node/package.json",
+        "packages/utils-base64/package.json",
+        "packages/utils-crypto/package.json",
+        "packages/utils-hex/package.json",
+        "packages/utils-id/package.json"
+      ]
+    }
+  }
+}
