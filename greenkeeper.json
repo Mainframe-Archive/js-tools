@@ -6,6 +6,7 @@
         "packages/rpc-base/package.json",
         "packages/rpc-browser/package.json",
         "packages/rpc-error/package.json",
+        "packages/rpc-handler/package.json",
         "packages/rpc-http-browser/package.json",
         "packages/rpc-http-node/package.json",
         "packages/rpc-ipc/package.json",
