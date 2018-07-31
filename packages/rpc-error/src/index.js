@@ -50,6 +50,14 @@ export default class RPCError extends BaseError {
     this.code = code
     this.data = data
   }
+
+  toObject(): ErrorObject {
+    return {
+      code: this.code,
+      data: this.data,
+      message: this.message,
+    }
+  }
 }
 
 const createError = (key: $Keys<typeof ERROR_CODES>) => {

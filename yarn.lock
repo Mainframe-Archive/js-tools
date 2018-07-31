@@ -92,6 +92,12 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@mainframe/rpc-error@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@mainframe/rpc-error/-/rpc-error-0.1.1.tgz#fe7c00bc96079356662992d9bd553c116e12fcee"
+  dependencies:
+    es6-error "^4.1.1"
+
 "@octokit/rest@^15.2.6":
   version "15.9.4"
   resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-15.9.4.tgz#c6cf0f483275d9c798b18419b7c9d417493bb70f"
@@ -2298,6 +2304,10 @@ fast-json-stable-stringify@^2.0.0:
 fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
+
+fastest-validator@^0.6.10:
+  version "0.6.10"
+  resolved "https://registry.yarnpkg.com/fastest-validator/-/fastest-validator-0.6.10.tgz#1d120c2fa9afd73612911db099ff707c028f8461"
 
 fb-watchman@^2.0.0:
   version "2.0.0"

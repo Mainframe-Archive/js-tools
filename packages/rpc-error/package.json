@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/rpc-error",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "JSON-RPC error",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "cjs/index.js",

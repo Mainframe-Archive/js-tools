@@ -43,6 +43,10 @@ type ErrorObject = {
 1.  `message?: string`: will be set based on the `code` when not provided
 1.  `data?: ?any`: additional error data
 
+### .toObject()
+
+**Returns** `ErrorObject`
+
 ### RPCError.fromObject()
 
 **Arguments**

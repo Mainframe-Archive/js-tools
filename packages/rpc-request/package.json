@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@mainframe/rpc-base": "^0.1.1",
-    "@mainframe/rpc-error": "^0.1.1"
+    "@mainframe/rpc-error": "^0.2.1"
   },
   "devDependencies": {
     "flow-bin": "^0.77.0"

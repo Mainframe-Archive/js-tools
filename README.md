@@ -35,6 +35,7 @@ Shared JS libraries for various Mainframe projects.
 | [`@mainframe/secure-file`](/packages/secure-file) | [![npm version](https://img.shields.io/npm/v/@mainframe/secure-file.svg)](https://www.npmjs.com/package/@mainframe/secure-file) | ⚙️ | Cryptographic utilities for files
 | **Utilities**
 | [`@mainframe/rpc-error`](/packages/rpc-error) | [![npm version](https://img.shields.io/npm/v/@mainframe/rpc-error.svg)](https://www.npmjs.com/package/@mainframe/rpc-error) | 🌐 ⚙️ | RPC error class and utilities
+| [`@mainframe/rpc-handler`](/packages/rpc-handler) | [![npm version](https://img.shields.io/npm/v/@mainframe/rpc-handler.svg)](https://www.npmjs.com/package/@mainframe/rpc-handler) | ⚙️ | RPC requests handler factory and utilities
 | [`@mainframe/utils-base64`](/packages/utils-base64) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-base64.svg)](https://www.npmjs.com/package/@mainframe/utils-base64) | 🌐 ⚙️ | Base64 strings encoding and decoding
 | [`@mainframe/utils-crypto`](/packages/utils-crypto) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-crypto.svg)](https://www.npmjs.com/package/@mainframe/utils-crypto) | 🌐 ⚙️ | Cryptographic primitives
 | [`@mainframe/utils-hex`](/packages/utils-hex) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-hex.svg)](https://www.npmjs.com/package/@mainframe/utils-hex) | 🌐 ⚙️ | Hexadecimal strings encoding and decoding
