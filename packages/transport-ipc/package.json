@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/transport-ipc",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "IPC transport",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
@@ -18,7 +18,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "rx-socket": "^0.3.1"
+    "rx-socket": "^0.3.2"
   },
   "devDependencies": {
     "flow-bin": "^0.77.0",

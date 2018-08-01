@@ -1,6 +1,8 @@
 // @flow
 
 import StreamRPC from '@mainframe/rpc-stream'
-import ipcTransport from '@mainframe/transport-ipc'
+import ipcTransport, { type SocketConfig } from '@mainframe/transport-ipc'
 
-export default (path: string) => new StreamRPC(ipcTransport(path))
+export default <T>(pathOrConfig: string | SocketConfig<T>) => {
+  return new StreamRPC(ipcTransport(pathOrConfig))
+}
