@@ -16,6 +16,7 @@
       "**/fs-extra",
       "**/node-fetch",
       "**/nanoid",
+      "**/oboe",
       "**/rx-socket",
       "**/sodium-universal",
       "**/ws"

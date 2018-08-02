@@ -1,3 +1,7 @@
+## v0.2.3 (2018-08-02)
+
+Update `rx-socket` dependency.
+
 ## v0.2.2 (2018-08-01)
 
 Update `rx-socket` dependency and export config type.

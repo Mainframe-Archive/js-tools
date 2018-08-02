@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/rpc-ipc",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "IPC RPC for node",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@mainframe/rpc-stream": "^0.2.4",
-    "@mainframe/transport-ipc": "^0.2.2"
+    "@mainframe/transport-ipc": "^0.2.3"
   },
   "devDependencies": {
     "flow-bin": "^0.77.0",

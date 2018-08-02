@@ -1,9 +1,9 @@
 // @flow
 
-import { SocketSubject, type Config } from 'rx-socket'
+import { SocketSubject, type ConnectOrConfig } from 'rx-socket'
 
-export type SocketConfig<T> = Config<T>
+export type { ConnectOrConfig } from 'rx-socket'
 
-export default <T>(pathOrConfig: string | SocketConfig<T>) => {
-  return new SocketSubject(pathOrConfig)
+export default (connectOrConfig: ConnectOrConfig) => {
+  return new SocketSubject(connectOrConfig)
 }
