@@ -33,6 +33,12 @@ export type OutgoingResultMessage = {
 
 export type OutgoingMessage = OutgoingErrorMessage | OutgoingResultMessage
 
+export type ErrorHandler = (
+  ctx: any,
+  msg: IncomingMessage,
+  error: Error,
+) => void
+
 export type MethodHandler = (ctx: any, params: Object) => ?any
 
 export type NotificationHandler = (ctx: any, msg: IncomingMessage) => void
@@ -52,6 +58,7 @@ type NormalizedMethods = {
 
 export type HandlerParams = {
   methods: Methods,
+  onHandlerError?: ?ErrorHandler,
   onInvalidMessage?: ?NotificationHandler,
   onNotification?: ?NotificationHandler,
   validatorOptions?: ?Object,
@@ -112,20 +119,27 @@ export const normalizeMethods = (
   }, {})
 }
 
-const defaultOnNotification = (ctx: any, msg: IncomingMessage) => {
-  // eslint-disable-next-line no-console
-  console.warn('Unhandled notification', msg)
-}
+const defaultOnHandlerError = (
+  _ctx: any,
+  _msg: IncomingMessage,
+  _error: Error,
+) => {}
 
 const defaultOnInvalidMessage = (ctx: any, msg: IncomingMessage) => {
   // eslint-disable-next-line no-console
   console.warn('Unhandled invalid message', msg)
 }
 
+const defaultOnNotification = (ctx: any, msg: IncomingMessage) => {
+  // eslint-disable-next-line no-console
+  console.warn('Unhandled notification', msg)
+}
+
 export default (params: HandlerParams) => {
   const methods = normalizeMethods(params.methods)
-  const onNotification = params.onNotification || defaultOnNotification
+  const onHandlerError = params.onHandlerError || defaultOnHandlerError
   const onInvalidMessage = params.onInvalidMessage || defaultOnInvalidMessage
+  const onNotification = params.onNotification || defaultOnNotification
 
   return async (ctx: any, msg: IncomingMessage): Promise<?OutgoingMessage> => {
     const id = msg.id
@@ -152,6 +166,7 @@ export default (params: HandlerParams) => {
       const result = await handler(ctx, msg.params || {})
       return { jsonrpc: '2.0', id, result }
     } catch (err) {
+      onHandlerError(ctx, msg, err)
       let error
       if (err instanceof RPCError) {
         error = err.toObject()

@@ -13,7 +13,7 @@ yarn add @mainframe/rpc-ipc
 ```js
 import ipcRPC from '@mainframe/rpc-ipc'
 
-const rpc = wsRPC('/path/to/socket')
+const rpc = ipcRPC('/path/to/socket')
 
 rpc.request('getUser', ['1234']).then(console.log)
 ```

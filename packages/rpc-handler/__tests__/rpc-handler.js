@@ -180,6 +180,7 @@ describe('rpc-handler', () => {
   })
 
   it('createHandler() handles errors from method handlers', async () => {
+    const onHandlerError = jest.fn()
     const paramErrorHandler = jest.fn()
     const handle = createHandler({
       methods: {
@@ -206,6 +207,7 @@ describe('rpc-handler', () => {
           throw new Error()
         },
       },
+      onHandlerError,
     })
 
     const paramsErrorCode = ERROR_CODES.INVALID_PARAMS
@@ -283,5 +285,7 @@ describe('rpc-handler', () => {
         message: 'Server error',
       },
     })
+
+    expect(onHandlerError).toHaveBeenCalledTimes(5)
   })
 })

@@ -87,6 +87,12 @@ JSON-RPC outgoing (response) message:
 type OutgoingMessage = OutgoingErrorMessage | OutgoingResultMessage
 ```
 
+### ErrorHandler
+
+```js
+type ErrorHandler = (ctx: any, msg: IncomingMessage, error: Error) => void
+```
+
 ### MethodHandler
 
 ```js
@@ -121,6 +127,7 @@ type Methods = {
 ```js
 type HandlerParams = {
   methods: Methods,
+  onHandlerError?: ?ErrorHandler,
   onInvalidMessage?: ?NotificationHandler,
   onNotification?: ?NotificationHandler,
   validatorOptions?: ?Object,

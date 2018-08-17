@@ -31,6 +31,20 @@
       ],
       "plugins": ["syntax-class-properties", "transform-class-properties"]
     },
+    "electron-renderer": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "electron": "2.0"
+            },
+            "loose": true
+          }
+        ]
+      ],
+      "plugins": ["syntax-class-properties", "transform-class-properties"]
+    },
     "node": {
       "presets": [
         [

@@ -1,7 +1,7 @@
 {
-  "name": "@mainframe/rpc-handler",
-  "version": "0.2.0",
-  "description": "JSON-RPC handler",
+  "name": "@mainframe/transport-electron",
+  "version": "0.1.0",
+  "description": "Electron transport",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
   "author": "Mainframe",
@@ -11,17 +11,19 @@
   ],
   "scripts": {
     "clean": "del lib",
-    "build:js": "BABEL_ENV=node babel src --out-dir lib",
+    "build:js": "BABEL_ENV=electron-renderer babel src --out-dir lib",
     "build:flow": "flow-copy-source src lib",
     "build": "yarn clean && yarn build:js && yarn build:flow",
     "test:types": "flow check",
     "prepublishOnly": "yarn build"
   },
-  "dependencies": {
-    "@mainframe/rpc-error": "^0.2.1",
-    "fastest-validator": "^0.6.10"
+  "peerDependencies": {
+    "electron": "^2.0.0",
+    "rxjs": "^6.0.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.79.0"
+    "electron": "^2.0.7",
+    "flow-bin": "^0.79.0",
+    "rxjs": "^6.2.2"
   }
 }

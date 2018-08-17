@@ -23,9 +23,9 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "nanoid": "^1.0.7"
+    "nanoid": "^1.2.1"
   },
   "devDependencies": {
-    "flow-bin": "^0.77.0"
+    "flow-bin": "^0.79.0"
   }
 }
