@@ -1,3 +1,7 @@
+## v0.2.1 (2018-08-20)
+
+Fix support for `validatorOptions`.
+
 ## v0.2.0 (2018-08-17)
 
 Add `onHandlerError` option.

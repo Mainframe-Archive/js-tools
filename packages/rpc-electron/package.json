@@ -22,7 +22,7 @@
     "@mainframe/transport-electron": "^0.1.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.79.0",
+    "flow-bin": "^0.79.1",
     "rxjs": "^6.0.0"
   }
 }

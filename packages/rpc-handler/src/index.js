@@ -136,7 +136,7 @@ const defaultOnNotification = (ctx: any, msg: IncomingMessage) => {
 }
 
 export default (params: HandlerParams) => {
-  const methods = normalizeMethods(params.methods)
+  const methods = normalizeMethods(params.methods, params.validatorOptions)
   const onHandlerError = params.onHandlerError || defaultOnHandlerError
   const onInvalidMessage = params.onInvalidMessage || defaultOnInvalidMessage
   const onNotification = params.onNotification || defaultOnNotification
