@@ -18,6 +18,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0",
     "@mainframe/rpc-http-node": "^0.1.1",
     "@mainframe/rpc-ipc": "^0.2.1",
     "@mainframe/rpc-ws-node": "^0.2.3"

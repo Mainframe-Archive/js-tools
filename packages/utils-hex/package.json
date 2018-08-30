@@ -22,6 +22,9 @@
     "test:unit": "jest",
     "prepublishOnly": "yarn build"
   },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0"
+  },
   "devDependencies": {
     "flow-bin": "^0.79.1"
   }

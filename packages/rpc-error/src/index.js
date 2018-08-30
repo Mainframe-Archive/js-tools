@@ -46,9 +46,10 @@ export default class RPCError extends BaseError {
   message: string
 
   constructor(code: number, message?: ?string, data?: ?any) {
-    super(message || getErrorMessage(code))
+    super()
     this.code = code
     this.data = data
+    this.message = message || getErrorMessage(code)
   }
 
   toObject(): ErrorObject {

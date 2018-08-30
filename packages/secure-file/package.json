@@ -19,6 +19,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0",
     "@mainframe/utils-base64": "^0.1.1",
     "@mainframe/utils-crypto": "^0.2.2",
     "fs-extra": "^7.0.0"

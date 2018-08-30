@@ -23,6 +23,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0",
     "@mainframe/rpc-base": "^0.1.1",
     "@mainframe/rpc-error": "^0.2.1"
   },

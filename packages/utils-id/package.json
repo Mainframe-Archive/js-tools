@@ -23,7 +23,8 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "nanoid": "^1.2.1"
+    "@babel/runtime": "^7.0.0",
+    "nanoid": "^1.2.2"
   },
   "devDependencies": {
     "flow-bin": "^0.79.1"

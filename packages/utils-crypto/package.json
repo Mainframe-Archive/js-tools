@@ -23,6 +23,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0",
     "sodium-universal": "^2.0.0"
   },
   "devDependencies": {
