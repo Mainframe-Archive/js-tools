@@ -21,12 +21,12 @@
     "@babel/runtime": "^7.0.0"
   },
   "peerDependencies": {
-    "electron": "^2.0.0",
+    "electron": "^3.0.0",
     "rxjs": "^6.0.0"
   },
   "devDependencies": {
-    "electron": "^2.0.8",
-    "flow-bin": "^0.79.1",
+    "electron": "^3.0.2",
+    "flow-bin": "^0.82.0",
     "rxjs": "^6.2.2"
   }
 }

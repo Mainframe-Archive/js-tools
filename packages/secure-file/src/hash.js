@@ -1,7 +1,7 @@
 // @flow
 
+import { createReadStream } from 'fs'
 import { hashStream } from '@mainframe/utils-crypto'
-import { createReadStream } from 'fs-extra'
 
 export const createFileHash = (
   path: string,

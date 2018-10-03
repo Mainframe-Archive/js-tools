@@ -125,6 +125,10 @@ export default class StreamRPC extends BaseRPC {
     })
   }
 
+  notify(method: string, params?: any) {
+    this._transport.next({ jsonrpc: '2.0', method, params })
+  }
+
   subscribe(...args: Array<*>) {
     if (!this.connected) {
       throw new Error('Not connected')

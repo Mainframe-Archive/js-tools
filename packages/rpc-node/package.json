@@ -24,6 +24,6 @@
     "@mainframe/rpc-ws-node": "^0.2.3"
   },
   "devDependencies": {
-    "flow-bin": "^0.79.1"
+    "flow-bin": "^0.82.0"
   }
 }
