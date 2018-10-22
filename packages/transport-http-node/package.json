@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@mainframe/transport-create-http": "^0.1.1",
+    "@mainframe/transport-create-http": "^0.1.2",
     "node-fetch": "^2.1.2"
   },
   "devDependencies": {
