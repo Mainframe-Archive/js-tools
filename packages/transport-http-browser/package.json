@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@mainframe/transport-create-http": "^0.1.1"
+    "@mainframe/transport-create-http": "^0.1.2"
   },
   "devDependencies": {
     "flow-bin": "^0.83.0"
