@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/transport-create-http",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "HTTP transport factory",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "cjs/index.js",
@@ -25,6 +25,6 @@
     "@babel/runtime": "^7.0.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.82.0"
+    "flow-bin": "^0.83.0"
   }
 }

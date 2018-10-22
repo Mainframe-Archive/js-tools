@@ -7,10 +7,28 @@ const HEADERS = {
 
 const METHOD = 'POST'
 
+export class HTTPError extends Error {
+  status: number
+
+  constructor(status: number, message: string) {
+    super(message)
+    this.status = status
+  }
+}
+
+export const resOrError = (res: *) => {
+  return res.ok
+    ? Promise.resolve(res)
+    : Promise.reject(new HTTPError(res.status, res.statusText))
+}
+
 export default (fetch: *) => (url: string) => (data: Object) => {
-  return fetch(url, {
+  const request = {
     body: JSON.stringify(data),
     headers: HEADERS,
     method: METHOD,
-  }).then(res => res.json())
+  }
+  return fetch(url, request)
+    .then(resOrError)
+    .then(res => res.json())
 }
