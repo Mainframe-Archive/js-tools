@@ -20,7 +20,7 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0",
     "@mainframe/rpc-stream": "^0.2.4",
-    "@mainframe/transport-ipc": "^0.2.3",
+    "@mainframe/transport-ipc": "^0.2.4",
     "rxjs": "^6.3.3"
   },
   "devDependencies": {
