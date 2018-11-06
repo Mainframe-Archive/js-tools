@@ -1,3 +1,7 @@
+## v0.2.4 (2018-11-06)
+
+Fix type definition for Flow v0.85.
+
 ## v0.2.3 (2018-08-02)
 
 Update `rx-socket` dependency.

@@ -19,20 +19,6 @@ const error3 = new RPCError(-32600) // Invalid request
 const error4 = new RPCError(1000, 'Custom app error', { user: 'alice' })
 ```
 
-## Types
-
-### ErrorObject
-
-JSON-RPC Error object type:
-
-```js
-type ErrorObject = {
-  code: number,
-  message?: ?string,
-  data?: ?any,
-}
-```
-
 ## API
 
 ### new RPCError()
@@ -45,13 +31,15 @@ type ErrorObject = {
 
 ### .toObject()
 
-**Returns** `ErrorObject`
+**Returns** [`RPCErrorObject`](../rpc-base#rpcerrorobject)
 
 ### RPCError.fromObject()
 
+Creates a RPCError instance from a [`RPCErrorObject`](../rpc-base#rpcerrorobject).
+
 **Arguments**
 
-1.  `error: ErrorObject`
+1.  `error: RPCErrorObject`
 
 **Returns** `RPCError` instance
 

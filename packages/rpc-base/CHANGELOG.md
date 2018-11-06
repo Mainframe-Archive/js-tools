@@ -1,3 +1,7 @@
+## v0.2.0 (2018-11-06)
+
+Add Flow types for JSON-RPC requests and responses.
+
 ## v0.1.3 (2018-08-16)
 
 Fix CommonJS export.

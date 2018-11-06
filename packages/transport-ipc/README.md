@@ -13,7 +13,7 @@ yarn add @mainframe/transport-ipc
 ```js
 import ipcTransport from '@mainframe/transport-ipc'
 
-const transport = wsTransport('/path/to/socket')
+const transport = ipcTransport('/path/to/socket')
 
 transport.subcribe(console.log)
 transport.next({ hello: 'transport' })

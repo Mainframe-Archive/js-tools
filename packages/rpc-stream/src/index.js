@@ -2,7 +2,7 @@
 
 import { Observable, type Subject, Subscriber, type Subscription } from 'rxjs'
 
-import BaseRPC from '@mainframe/rpc-base'
+import BaseRPC, { type RPCResponse } from '@mainframe/rpc-base'
 import RPCError from '@mainframe/rpc-error'
 
 export default class StreamRPC extends BaseRPC {
@@ -31,18 +31,20 @@ export default class StreamRPC extends BaseRPC {
 
     let failed
     this._subscription = this._transport.subscribe({
-      next: (msg: Object) => {
+      next: (msg: RPCResponse) => {
         if (msg.id == null) {
           this._subscribers.forEach(o => {
             o.next(msg)
           })
         } else {
-          const observer = this._observers.get(msg.id)
-          if (observer) {
-            if (msg.error) {
+          const observer = this._observers.get(String(msg.id))
+          if (observer != null) {
+            if (msg.error != null) {
               const err = RPCError.fromObject(msg.error)
               observer.error(err)
-              this._observers.delete(msg.id)
+              if (msg.id != null) {
+                this._observers.delete(String(msg.id))
+              }
             } else {
               observer.next(msg.result)
             }

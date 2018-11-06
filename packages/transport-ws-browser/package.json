@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/transport-ws-browser",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "WebSocket transport for browser",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "cjs/index.js",
@@ -22,13 +22,10 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0"
-  },
-  "peerDependencies": {
+    "@babel/runtime": "^7.0.0",
     "rxjs": "^6.0.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.83.0",
-    "rxjs": "^6.0.0"
+    "flow-bin": "^0.85.0"
   }
 }

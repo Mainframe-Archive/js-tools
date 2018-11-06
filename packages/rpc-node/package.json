@@ -21,9 +21,10 @@
     "@babel/runtime": "^7.0.0",
     "@mainframe/rpc-http-node": "^0.1.1",
     "@mainframe/rpc-ipc": "^0.2.1",
-    "@mainframe/rpc-ws-node": "^0.2.3"
+    "@mainframe/rpc-ws-node": "^0.2.3",
+    "rxjs": "^6.3.3"
   },
   "devDependencies": {
-    "flow-bin": "^0.83.0"
+    "flow-bin": "^0.85.0"
   }
 }

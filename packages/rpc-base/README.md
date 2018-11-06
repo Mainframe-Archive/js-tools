@@ -20,6 +20,46 @@ class MyRPC extends BaseRPC {
 }
 ```
 
+## Types
+
+### RPCID
+
+```js
+type RPCID = string | number | null
+```
+
+### RPCRequest
+
+```js
+type RPCRequest = {
+  jsonrpc: '2.0',
+  method: string,
+  id?: RPCID,
+  params?: any,
+}
+```
+
+### RPCError
+
+```js
+type RPCErrorObject = {
+  code: number,
+  message?: ?string,
+  data?: any,
+}
+```
+
+### RPCResponse
+
+```js
+type RPCResponse = {
+  jsonrpc: '2.0',
+  id: RPCID,
+  result?: any,
+  error?: RPCErrorObject,
+}
+```
+
 ## API
 
 ### new BaseRPC()

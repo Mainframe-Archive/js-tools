@@ -1,3 +1,7 @@
+## v0.3.0 (2018-11-06)
+
+Remove `ErrorObject` type, now exported from `rpc-base`.
+
 ## v0.2.1 (2018-07-31)
 
 Fix `toObject()` method.

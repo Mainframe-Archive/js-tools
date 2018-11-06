@@ -1,3 +1,7 @@
+## v0.3.3 (2018-11-06)
+
+Fix type definition for Flow v0.85.
+
 ## v0.3.2 (2018-07-23)
 
 Update `ws` dependency to v6.

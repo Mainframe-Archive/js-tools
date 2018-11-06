@@ -27,6 +27,6 @@
     "@mainframe/transport-web3": "^0.1.1"
   },
   "devDependencies": {
-    "flow-bin": "^0.83.0"
+    "flow-bin": "^0.85.0"
   }
 }

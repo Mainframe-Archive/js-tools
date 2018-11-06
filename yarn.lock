@@ -2844,10 +2844,10 @@ electron-to-chromium@^1.3.80:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.80.tgz#e99ec7efe64c2c6a269d3885ff411ea88852fa53"
   integrity sha512-WClidEWEUNx7OfwXehB0qaxCuetjbKjev2SmXWgybWPLKAThBiMTF/2Pd8GSUDtoGOavxVzdkKwfFAPRSWlkLw==
 
-electron@^3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-3.0.5.tgz#5a6f105af3b6314636c7c27a25312602dd36eae6"
-  integrity sha512-rcHNbhSGfj80Av5p06LgIUxN8wQbrdx8yblikJamDezqxe0B11CJSEJuidz6TJoCRDZuWHt+P5xMAEhp92ZUcA==
+electron@^3.0.8:
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-3.0.8.tgz#7905806ebaead4c693531e11cda6568c32efa7bb"
+  integrity sha512-UVj+K59lYU/vH/7TxrmDidPssFwGQZ6Ljuupugdr9h6ipMuhwgk3WRO+OlJ2TsyhKhJ6tp3AcJunuN4mprblhQ==
   dependencies:
     "@types/node" "^8.0.24"
     electron-download "^4.1.0"
@@ -3088,10 +3088,10 @@ eslint-visitor-keys@^1.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
   integrity sha512-qzm/XxIbxm/FHyH341ZrbnMUpe+5Bocte9xkmFMzPMjRaZMcXww+MpBptFvtU+79L362nqiLhekCxCxDPaUMBQ==
 
-eslint@^5.7.0:
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-5.7.0.tgz#55c326d6fb2ad45fcbd0ce17c3846f025d1d819c"
-  integrity sha512-zYCeFQahsxffGl87U2aJ7DPyH8CbWgxBC213Y8+TCanhUTf2gEvfq3EKpHmEcozTLyPmGe9LZdMAwC/CpJBM5A==
+eslint@^5.8.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-5.8.0.tgz#91fbf24f6e0471e8fdf681a4d9dd1b2c9f28309b"
+  integrity sha512-Zok6Bru3y2JprqTNm14mgQ15YQu/SMDkWdnmHfFg770DIUlmMFd/gqqzCHekxzjHZJxXv3tmTpH0C1icaYJsRQ==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     ajv "^6.5.3"
@@ -3392,10 +3392,10 @@ fast-levenshtein@~2.0.4:
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
-fastest-validator@^0.6.10:
-  version "0.6.10"
-  resolved "https://registry.yarnpkg.com/fastest-validator/-/fastest-validator-0.6.10.tgz#1d120c2fa9afd73612911db099ff707c028f8461"
-  integrity sha512-vef5q97XgY3RWUPGDmt/y0Brxuig/mg1Hctl1BG5roPMVeEiSzaGbSPPPNELGxUkDmAzmhS1f0I7aSxqSu2vzQ==
+fastest-validator@^0.6.12:
+  version "0.6.12"
+  resolved "https://registry.yarnpkg.com/fastest-validator/-/fastest-validator-0.6.12.tgz#0d6f8da63ce677d7b7521eb6a8e2c625c1d7de79"
+  integrity sha512-uhjB4fb8zAggNRK/HMJJzoDi1AcnLD8zrYoEFbUN+hH1ZZxfWRClIWlZ6ne0th6D3DFGlfZ6xsWqUX+WN5GblQ==
 
 fb-watchman@^2.0.0:
   version "2.0.0"
@@ -3497,10 +3497,10 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-flow-bin@^0.83.0:
-  version "0.83.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.83.0.tgz#fd26f5f95758d7701264b3f9a1e1a3d4cbcab1a9"
-  integrity sha512-1K83EL/U9Gh0BaXPKkZe6TRizSmNSKx9Wuws1c8gh7DJEwiburtCxYT+4o7in1+GnNEm3CZWnbnVV8n9HMpiDA==
+flow-bin@^0.85.0:
+  version "0.85.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.85.0.tgz#a3ca80748a35a071d5bbb2fcd61d64d977fc53a6"
+  integrity sha512-ougBA2q6Rn9sZrjZQ9r5pTFxCotlGouySpD2yRIuq5AYwwfIT8HHhVMeSwrN5qJayjHINLJyrnsSkkPCZyfMrQ==
 
 flow-copy-source@^2.0.2:
   version "2.0.2"
@@ -3513,7 +3513,7 @@ flow-copy-source@^2.0.2:
     kefir "^3.7.3"
     yargs "^12.0.1"
 
-flow-mono-cli@~1.3.3:
+flow-mono-cli@~1.3.4:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/flow-mono-cli/-/flow-mono-cli-1.3.4.tgz#ebd80a565fc9238e0e4b4b60ee645a40d25dd340"
   integrity sha512-Eg242POkUkuuc+ot3hBobpO7uNkgAMdJMIfsHhscZkoZJSI2LBpk//SosH8KrxkoMWGoxQVNneYpD9+KwTY63Q==
@@ -5748,10 +5748,10 @@ nanoassert@^1.0.0:
   resolved "https://registry.yarnpkg.com/nanoassert/-/nanoassert-1.1.0.tgz#4f3152e09540fde28c76f44b19bbcd1d5a42478d"
   integrity sha1-TzFS4JVA/eKMdvRLGbvNHVpCR40=
 
-nanoid@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-1.3.1.tgz#4538e1a02822b131da198d8eb17c9e3b3ac5167f"
-  integrity sha512-wSBw7t+JVjQAY8q89BhrTaBTMdoPGbZP8qQqidQHL76oeaFJ9i+c6SKKHP2l/DmzLP43eeV6JkM3f5Mb6saH8Q==
+nanoid@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-2.0.0.tgz#e1ab4a4b024a38d15531ba34a712a201540de639"
+  integrity sha512-SG2qscLE3iM4C0CNzGrsAojJHSVHMS1J8NnvJ31P1lH8P0hGHOiafmniNJz6w6q7vuoDlV7RdySlJgtqkFEVtQ==
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -5798,10 +5798,15 @@ node-fetch-npm@^2.0.2:
     json-parse-better-errors "^1.0.0"
     safe-buffer "^5.1.1"
 
-node-fetch@^2.1.1, node-fetch@^2.1.2:
+node-fetch@^2.1.1:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.2.0.tgz#4ee79bde909262f9775f731e3656d0db55ced5b5"
   integrity sha512-OayFWziIxiHY8bCUyLX6sTpDH8Jsbp4FfYd1j1f7vZyfgkcOnAyM4oQR16f8a0s7Gl/viMGRey8eScYk4V4EZA==
+
+node-fetch@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.2.1.tgz#1fe551e0ded6c45b3b3b937d0fb46f76df718d1e"
+  integrity sha512-ObXBpNCD3A/vYQiQtEWl7DuqjAXjfptYFuGHLdPl5U19/6kJuZV+8uMHLrkj3wJrJoyfg4nhgyFixZdaZoAiEQ==
 
 node-gyp-build@^3.0.0:
   version "3.5.0"
@@ -7089,10 +7094,10 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rx-socket@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/rx-socket/-/rx-socket-0.4.0.tgz#59168398f594d5914d8fdad7f5713796060b3350"
-  integrity sha512-rvTnTJe3HdX7COtPmJN8gOpL5VDtTXF7g7pRYN+UsrzkcLxu/qSNMBW4apGhQJaHzq54VxJqMy6PYO6OasgADg==
+rx-socket@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/rx-socket/-/rx-socket-0.4.1.tgz#c20471ba3a6dbe2810793003a5b7b096632fad7e"
+  integrity sha512-JNGRA1UttGLlvhFKWvr7f0zJa8Rbq8PopTPa4KSrhyNuCGYz/AvQBCfY/HyNx4HuR1GvC/BmAkO//pe+d2Q+FQ==
   dependencies:
     oboe "^2.1.4"
 
@@ -7103,7 +7108,7 @@ rxjs@^5.5.2:
   dependencies:
     symbol-observable "1.0.1"
 
-rxjs@^6.0.0, rxjs@^6.1.0, rxjs@^6.2.0, rxjs@^6.2.2:
+rxjs@^6.0.0, rxjs@^6.1.0, rxjs@^6.2.0, rxjs@^6.3.3:
   version "6.3.3"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.3.3.tgz#3c6a7fa420e844a81390fb1158a9ec614f4bad55"
   integrity sha512-JTWmoY9tWCs7zvIk/CvRjhjGaOd+OVBM987mxFo+OW66cGpdKjZcpmc74ES1sB//7Kl/PAe8+wEakuhG4pcgOw==
