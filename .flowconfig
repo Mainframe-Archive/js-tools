@@ -2,6 +2,8 @@
 # therefore are paths like `./../../` just a reference to the root of the mono-repo.
 #
 [ignore]
+<PROJECT_ROOT>/cjs/.*
+<PROJECT_ROOT>/esm/.*
 <PROJECT_ROOT>/lib/.*
 .*/node_modules/oboe/test/.*
 
