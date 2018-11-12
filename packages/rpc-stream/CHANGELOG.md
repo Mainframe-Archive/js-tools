@@ -1,3 +1,7 @@
+## v0.2.5 (2018-11-12)
+
+Include RxJS as dependency rather than peer dependency.
+
 ## v0.2.4 (2018-07-09)
 
 Export as CommonJS and ESM.
