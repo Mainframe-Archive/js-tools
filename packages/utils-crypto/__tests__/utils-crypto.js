@@ -284,4 +284,22 @@ describe('utils-crypto', () => {
       expect(invalid).toBeUndefined()
     })
   })
+
+  describe('advanced flows', () => {
+    it('converts signature keys and encrypts messages', () => {
+      const aliceSignKP = createSignKeyPair()
+      const bobSignKP = createSignKeyPair()
+      // Alice and Bob create encryption secret keys from their own signature keys
+      const aliceSecretKey = createBoxKeyPairFromSign(aliceSignKP).secretKey
+      const bobSecretKey = createBoxKeyPairFromSign(bobSignKP).secretKey
+      // Alice and Bob can derive each other's public encryption key based on the signature key
+      const aliceToBobKey = createBoxPublicFromSign(bobSignKP.publicKey)
+      const bobFromAliceKey = createBoxPublicFromSign(aliceSignKP.publicKey)
+      // Message encription and decryption flow
+      const message = Buffer.from('hello')
+      const encrypted = encryptBox(message, aliceToBobKey, aliceSecretKey)
+      const decrypted = decryptBox(encrypted, bobFromAliceKey, bobSecretKey)
+      expect(message.equals(decrypted)).toBe(true)
+    })
+  })
 })

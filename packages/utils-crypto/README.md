@@ -81,8 +81,8 @@ Decrypts the provided `EncryptedBox` using the `fromPublicKey` and `forSecretKey
 **Arguments**
 
 1.  `encrypted: EncryptedBox`
-1.  `forPublicKey: Buffer`
-1.  `fromSecretKey: Buffer`
+1.  `fromPublicKey: Buffer`
+1.  `forSecretKey: Buffer`
 
 **Returns** `Buffer`
 
