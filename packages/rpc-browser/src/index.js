@@ -4,8 +4,8 @@ import http from '@mainframe/rpc-http-browser'
 import web3 from '@mainframe/rpc-web3'
 import ws from '@mainframe/rpc-ws-browser'
 
-const HTTP_RE = /^https?:\/\//gi
-const WS_RE = /^wss?:\/\//gi
+const HTTP_RE = /^https?:\/\//i
+const WS_RE = /^wss?:\/\//i
 
 export const httpRPC = http
 export const web3RPC = web3

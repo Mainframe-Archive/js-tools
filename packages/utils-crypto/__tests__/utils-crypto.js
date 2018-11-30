@@ -295,7 +295,7 @@ describe('utils-crypto', () => {
       // Alice and Bob can derive each other's public encryption key based on the signature key
       const aliceToBobKey = createBoxPublicFromSign(bobSignKP.publicKey)
       const bobFromAliceKey = createBoxPublicFromSign(aliceSignKP.publicKey)
-      // Message encription and decryption flow
+      // Message encryption and decryption flow
       const message = Buffer.from('hello')
       const encrypted = encryptBox(message, aliceToBobKey, aliceSecretKey)
       const decrypted = decryptBox(encrypted, bobFromAliceKey, bobSecretKey)

@@ -4,8 +4,8 @@ import http from '@mainframe/rpc-http-node'
 import ipc from '@mainframe/rpc-ipc'
 import ws from '@mainframe/rpc-ws-node'
 
-const HTTP_RE = /^https?:\/\//gi
-const WS_RE = /^wss?:\/\//gi
+const HTTP_RE = /^https?:\/\//i
+const WS_RE = /^wss?:\/\//i
 
 export const httpRPC = http
 export const ipcRPC = ipc

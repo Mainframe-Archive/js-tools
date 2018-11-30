@@ -23,6 +23,6 @@
     "@mainframe/transport-ws-node": "^0.3.1"
   },
   "devDependencies": {
-    "flow-bin": "^0.85.0"
+    "flow-bin": "^0.87.0"
   }
 }

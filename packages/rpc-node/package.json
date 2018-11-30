@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/rpc-node",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "RPC for node",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
@@ -25,6 +25,6 @@
     "rxjs": "^6.3.3"
   },
   "devDependencies": {
-    "flow-bin": "^0.85.0"
+    "flow-bin": "^0.87.0"
   }
 }
