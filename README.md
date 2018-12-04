@@ -43,6 +43,7 @@ Shared JS libraries for various Mainframe projects.
 | [`@mainframe/utils-crypto`](/packages/utils-crypto) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-crypto.svg)](https://www.npmjs.com/package/@mainframe/utils-crypto) | 🌐 ⚛️ ⚙️ | Cryptographic primitives
 | [`@mainframe/utils-hex`](/packages/utils-hex) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-hex.svg)](https://www.npmjs.com/package/@mainframe/utils-hex) | 🌐 ⚛️ ⚙️ | Hexadecimal strings encoding and decoding
 | [`@mainframe/utils-id`](/packages/utils-id) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-id.svg)](https://www.npmjs.com/package/@mainframe/utils-id) | 🌐 ⚛️ ⚙️ | Unique identifier utilities.
+| [`@mainframe/utils-time`](/packages/utils-time) | [![npm version](https://img.shields.io/npm/v/@mainframe/utils-time.svg)](https://www.npmjs.com/package/@mainframe/utils-time) | 🌐 ⚛️ ⚙️ | Time-related utilities.
 
 ## Development
 
