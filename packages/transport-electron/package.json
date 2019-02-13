@@ -26,6 +26,6 @@
   },
   "devDependencies": {
     "electron": "^3.0.10",
-    "flow-bin": "^0.87.0"
+    "flow-bin": "^0.92.1"
   }
 }

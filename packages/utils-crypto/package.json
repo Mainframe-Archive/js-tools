@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/utils-crypto",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Cryptographic primitives utilities",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "cjs/index.js",
@@ -27,6 +27,6 @@
     "sodium-universal": "^2.0.0"
   },
   "devDependencies": {
-    "flow-bin": "^0.87.0"
+    "flow-bin": "^0.92.1"
   }
 }

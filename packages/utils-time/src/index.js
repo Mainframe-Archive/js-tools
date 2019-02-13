@@ -1,14 +1,12 @@
 // @flow
 
-import BaseError from 'es6-error'
-
 export const sleep = (time: number = 0): Promise<void> => {
   return new Promise(resolve => {
     setTimeout(resolve, time)
   })
 }
 
-export class TimeoutError extends BaseError {}
+export class TimeoutError extends Error {}
 
 export const createTimeout = (time: number): Promise<empty> => {
   return new Promise((resolve, reject) => {

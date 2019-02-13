@@ -192,6 +192,34 @@ Generates a secure buffer (protected memory) of random data having the provided 
 
 **Returns** `Buffer`
 
+### createSecretStreamKey()
+
+Creates a random secret stream encryption key.
+
+**Returns** `Buffer` with length `SECRETSTREAM_KEYBYTES` (`crypto_secretstream_xchacha20poly1305_KEYBYTES`)
+
+### createEncryptStream()
+
+Creates a `Transform` stream encrypting contents using the provided `key`.
+This transform will add the encryption headers of length `SECRETSTREAM_HEADERBYTES` (`crypto_secretstream_xchacha20poly1305_HEADERBYTES`) to the output stream.
+
+**Arguments**
+
+1.  `key: Buffer` of length `SECRETSTREAM_KEYBYTES`
+
+**Returns** [`Transform` stream](https://nodejs.org/dist/latest-v10.x/docs/api/stream.html#stream_class_stream_transform)
+
+### createDecryptStream()
+
+Creates a `Transform` stream decrypting contents using the provided `key`.
+This transform expects the encryption headers to be present in the first `SECRETSTREAM_HEADERBYTES` (`crypto_secretstream_xchacha20poly1305_HEADERBYTES`) bytes of the input stream, as added by the [`createEncryptStream()`](#createEncryptStream) function.
+
+**Arguments**
+
+1.  `key: Buffer` of length `SECRETSTREAM_KEYBYTES`
+
+**Returns** [`Transform` stream](https://nodejs.org/dist/latest-v10.x/docs/api/stream.html#stream_class_stream_transform)
+
 ### createSignKeyPair()
 
 Creates a `KeyPair` for signature, using the optionally provided `seed` to generate it.

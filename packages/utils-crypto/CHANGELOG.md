@@ -1,3 +1,7 @@
+## v0.3.0 (2010-02-13)
+
+Added secret stream APIs.
+
 ## v0.2.2 (2018-08-09)
 
 Export as CommonJS and ESM.
