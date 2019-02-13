@@ -1,9 +1,15 @@
 // @flow
 
-import { SocketSubject, type ConnectOrConfig } from 'rx-socket'
+import { SocketSubject } from 'rx-socket'
 
-export type { ConnectOrConfig } from 'rx-socket'
+export type Config = net$connectOptions & {
+  closeObserver?: ?rxjs$NextObserver<boolean>,
+  openObserver?: ?rxjs$NextObserver<void>,
+  path: string,
+}
 
-export default (connectOrConfig: ConnectOrConfig) => {
-  return new SocketSubject<Object>(connectOrConfig)
+export type PathOrConfig = string | Config
+
+export default (pathOrConfig: PathOrConfig) => {
+  return new SocketSubject<Object>(pathOrConfig)
 }

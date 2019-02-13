@@ -12,7 +12,6 @@
       "packages/*"
     ],
     "nohoist": [
-      "**/es6-error",
       "**/fs-extra",
       "**/node-fetch",
       "**/nanoid",
@@ -45,7 +44,7 @@
     "babel-jest": "^24.1.0",
     "del-cli": "^1.1.0",
     "eslint": "^5.9.0",
-    "eslint-config-mainframe": "^2.3.0",
+    "eslint-config-mainframe": "^3.0.0",
     "flow-bin": "^0.92.1",
     "flow-copy-source": "^2.0.2",
     "flow-typed": "^2.5.1",

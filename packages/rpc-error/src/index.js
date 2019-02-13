@@ -1,7 +1,6 @@
 // @flow
 
 import type { RPCErrorObject } from '@mainframe/rpc-base'
-import BaseError from 'es6-error'
 
 export const ERROR_CODES = {
   PARSE_ERROR: -32700,
@@ -30,7 +29,7 @@ export const getErrorMessage = (code: number): string => {
   )
 }
 
-export default class RPCError extends BaseError {
+export default class RPCError extends Error {
   static fromObject(err: RPCErrorObject): RPCError {
     return new RPCError(err.code, err.message, err.data)
   }

@@ -1,8 +1,8 @@
 // @flow
 
 import StreamRPC from '@mainframe/rpc-stream'
-import ipcTransport, { type ConnectOrConfig } from '@mainframe/transport-ipc'
+import ipcTransport, { type PathOrConfig } from '@mainframe/transport-ipc'
 
-export default (connectOrConfig: ConnectOrConfig) => {
-  return new StreamRPC(ipcTransport(connectOrConfig))
+export default (pathOrConfig: PathOrConfig) => {
+  return new StreamRPC(ipcTransport(pathOrConfig))
 }

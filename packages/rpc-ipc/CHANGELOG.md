@@ -1,3 +1,7 @@
+## v0.3.0 (not released)
+
+Update `@mainframe/transport-ipc` dependency and config type.
+
 ## v0.2.3 (2018-08-02)
 
 Update `@mainframe/transport-ipc` dependency.

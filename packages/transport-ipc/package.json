@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/transport-ipc",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "IPC transport",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "rx-socket": "^0.4.1",
+    "rx-socket": "^0.5.0",
     "rxjs": "^6.3.3"
   },
   "devDependencies": {
