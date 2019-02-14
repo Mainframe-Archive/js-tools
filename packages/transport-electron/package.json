@@ -1,6 +1,6 @@
 {
   "name": "@mainframe/transport-electron",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Electron transport",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
@@ -22,10 +22,10 @@
     "rxjs": "^6.0.0"
   },
   "peerDependencies": {
-    "electron": "^3.0.0"
+    "electron": "^4.0.0"
   },
   "devDependencies": {
-    "electron": "^3.0.10",
-    "flow-bin": "^0.92.1"
+    "electron": "^4.0.4",
+    "flow-bin": "^0.93.0"
   }
 }

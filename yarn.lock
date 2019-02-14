@@ -1288,6 +1288,23 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
+"@mainframe/rpc-ipc@^0.2.1":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@mainframe/rpc-ipc/-/rpc-ipc-0.2.3.tgz#7b2ab6f64a6ef53a4cc962f7945cdb093919efc7"
+  integrity sha512-x8rU5zykjlGelP6c9pvQY4bq/30wIqw+U3grEz8T+6/WcJRwgitXlq5e1ImnQmw6KGFystGtJ3KrP51Y3PF4JQ==
+  dependencies:
+    "@mainframe/rpc-stream" "^0.2.4"
+    "@mainframe/transport-ipc" "^0.2.3"
+
+"@mainframe/transport-ipc@^0.2.3":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@mainframe/transport-ipc/-/transport-ipc-0.2.4.tgz#e2bc993fba8adf58aafcc9b7ef59f382952cca5b"
+  integrity sha512-8FsFon9kJqUOqRauE8+9CWoxNM16NgZSPvGCqUVjguBHIfRRdEr41RJtLzYC7i9NJMnTa2OXfSaT34nhXo6kzg==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    rx-socket "^0.4.1"
+    rxjs "^6.3.3"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -1356,10 +1373,10 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@types/node@^8.0.24":
-  version "8.10.40"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.40.tgz#4314888d5cd537945d73e9ce165c04cc550144a4"
-  integrity sha512-RRSjdwz63kS4u7edIwJUn8NqKLLQ6LyqF/X4+4jp38MBT3Vwetewi2N4dgJEshLbDwNgOJXNYoOwzVZUSSLhkQ==
+"@types/node@^10.12.18":
+  version "10.12.26"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.26.tgz#2dec19f1f7981c95cb54bab8f618ecb5dc983d0e"
+  integrity sha512-nMRqS+mL1TOnIJrL6LKJcNZPB8V3eTfRo9FQA2b5gDvrHurC8XbSA86KNe0dShlEL7ReWJv/OU9NL7Z0dnqWTg==
 
 "@typescript-eslint/eslint-plugin@^1.3.0":
   version "1.3.0"
@@ -2805,12 +2822,12 @@ electron-to-chromium@^1.3.103:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.113.tgz#b1ccf619df7295aea17bc6951dc689632629e4a9"
   integrity sha512-De+lPAxEcpxvqPTyZAXELNpRZXABRxf+uL/rSykstQhzj/B0l1150G/ExIIxKc16lI89Hgz81J0BHAcbTqK49g==
 
-electron@^3.0.10:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-3.1.3.tgz#848fa0fc62d131978cde15ec04ce195a08dc4155"
-  integrity sha512-Y1TbV5py2O0br0JVYh+ew1cW4cIOOgRNRMzwTwWuZNMZ9fK/XLlqsbZr1GpYHdiN2yIU1koO+g4Cw8VuW86NXQ==
+electron@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-4.0.4.tgz#638e32ccbe9ded1124c3e6dbbaa1e16d37c32019"
+  integrity sha512-zG5VtLrmPfmw1fXY/3BEtRZk7OZ7djQhweZ6rW+R5NeF6s8RTz/AwTGtLoBo4z8wmJ5QTy0Y941FZw4pe5YlpA==
   dependencies:
-    "@types/node" "^8.0.24"
+    "@types/node" "^10.12.18"
     electron-download "^4.1.0"
     extract-zip "^1.0.3"
 
@@ -3419,10 +3436,10 @@ flat-cache@^1.2.1:
     rimraf "~2.6.2"
     write "^0.2.1"
 
-flow-bin@^0.92.1:
-  version "0.92.1"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.92.1.tgz#32c136c07235f30c42dc0549a0790f370fad4070"
-  integrity sha512-F5kC5oQOR2FXROAeybJHFqgZP+moKV9fa/53QK4Q4WayTQHdA0KSl48KD1gP0A9mioRLiKUegTva/7I15cX3Iw==
+flow-bin@^0.93.0:
+  version "0.93.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.93.0.tgz#9192a08d88db2a8da0ff55e42420f44539791430"
+  integrity sha512-p8yq4ocOlpyJgOEBEj0v0GzCP25c9WP0ilFQ8hXSbrTR7RPKuR+Whr+OitlVyp8ocdX0j1MrIwQ8x28dacy1pg==
 
 flow-copy-source@^2.0.2:
   version "2.0.3"
@@ -5222,7 +5239,7 @@ lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
 
-loose-envify@^1.0.0:
+loose-envify@^1.0.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -6415,10 +6432,11 @@ promzard@^0.3.0:
     read "1"
 
 prop-types@^15.6.2:
-  version "15.7.1"
-  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.1.tgz#2fa61e0a699d428b40320127733ee2931f05d9d1"
-  integrity sha512-f8Lku2z9kERjOCcnDOPm68EBJAO2K00Q5mSgPAUE/gJuBgsYLbVy6owSrtcHj90zt8PvW+z0qaIIgsIhHOa1Qw==
+  version "15.7.2"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
+  integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
   dependencies:
+    loose-envify "^1.4.0"
     object-assign "^4.1.1"
     react-is "^16.8.1"
 
@@ -6945,6 +6963,13 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
+rx-socket@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/rx-socket/-/rx-socket-0.4.1.tgz#c20471ba3a6dbe2810793003a5b7b096632fad7e"
+  integrity sha512-JNGRA1UttGLlvhFKWvr7f0zJa8Rbq8PopTPa4KSrhyNuCGYz/AvQBCfY/HyNx4HuR1GvC/BmAkO//pe+d2Q+FQ==
+  dependencies:
+    oboe "^2.1.4"
+
 rx-socket@^0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/rx-socket/-/rx-socket-0.5.0.tgz#2bbd2722e7d50a40a05f2dd0bcd7dfec9b01379d"
@@ -7184,9 +7209,9 @@ sodium-javascript@~0.5.0:
     xsalsa20 "^1.0.0"
 
 sodium-native@^2.0.0:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/sodium-native/-/sodium-native-2.2.6.tgz#29dd34f994111568db60f5021d09e7016ba67323"
-  integrity sha512-PgtGv6TdyoES2jmniigUWTHks4vzette0CNoOyn8LpTfSUoTDJGJv4X123zXrr/zdmUPij0IPAmWLwSp+U22ig==
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/sodium-native/-/sodium-native-2.3.0.tgz#40cee5f504bb5f6196cc40c42748162d66ec2598"
+  integrity sha512-TYId1m2iLXXot2Q3KA6u8Ti9pmL24T2cm8nb9OUGFFmTxdw4I+vnkjcPVA4LT1acw+A86iJkEn+8iV51jcTWUg==
   dependencies:
     ini "^1.3.5"
     nan "^2.4.0"
