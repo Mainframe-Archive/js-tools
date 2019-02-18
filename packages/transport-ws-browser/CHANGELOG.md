@@ -1,3 +1,7 @@
+## v0.3.0 (not released)
+
+Add Typescript definitions.
+
 ## v0.2.2 (2018-11-06)
 
 Fix type definition for Flow v0.85.

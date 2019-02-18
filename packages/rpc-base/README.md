@@ -1,6 +1,6 @@
 # rpc-base
 
-Base class to handle JSON-RPC 2.0 calls, used by [`rpc-request`](../rpc-request) and [`rpc-stream`](../rpc-stream).
+Abstract class to handle JSON-RPC 2.0 calls, used by [`rpc-request`](../rpc-request) and [`rpc-stream`](../rpc-stream).
 
 ## Installation
 
@@ -31,32 +31,32 @@ type RPCID = string | number | null
 ### RPCRequest
 
 ```js
-type RPCRequest = {
-  jsonrpc: '2.0',
-  method: string,
-  id?: RPCID,
-  params?: any,
+interface RPCRequest<T = any> {
+  jsonrpc: '2.0'
+  method: string
+  id?: RPCID
+  params?: T
 }
 ```
 
 ### RPCError
 
 ```js
-type RPCErrorObject = {
-  code: number,
-  message?: ?string,
-  data?: any,
+interface RPCErrorObject<T = any> {
+  code: number;
+  message?: ?string;
+  data?: T;
 }
 ```
 
 ### RPCResponse
 
 ```js
-type RPCResponse = {
-  jsonrpc: '2.0',
-  id: RPCID,
-  result?: any,
-  error?: RPCErrorObject,
+interface RPCResponse<T = any, E = any> {
+  jsonrpc: '2.0';
+  id: RPCID;
+  result?: T;
+  error?: RPCErrorObject<E>;
 }
 ```
 
@@ -78,9 +78,14 @@ type RPCResponse = {
 
 ### .request()
 
-**⚠️ Must be implemented by extending classes**\
+**⚠️ This is an abstract method, it must be implemented by extending classes**\
 
-**Returns** `Promise<any>`
+**Arguments**
+
+1. `method: string`
+1. `params?: P`
+
+**Returns** `Promise<T = any>`
 
 ## License
 

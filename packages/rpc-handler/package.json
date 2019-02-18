@@ -1,28 +1,29 @@
 {
   "name": "@mainframe/rpc-handler",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "JSON-RPC handler",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
+  "types": "types/index.d.ts",
   "author": "Mainframe",
   "license": "MIT",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
   "scripts": {
-    "clean": "del lib",
-    "build:js": "BABEL_ENV=node babel src --out-dir lib",
-    "build:flow": "flow-copy-source src lib",
-    "build": "yarn clean && yarn build:js && yarn build:flow",
-    "test:types": "flow check",
+    "clean": "del lib types",
+    "build:js": "BABEL_ENV=node babel src --out-dir lib --extensions \".ts\"",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "yarn clean && yarn build:js && yarn build:types",
+    "test:types": "tsc --noEmit",
+    "test:unit": "jest",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@mainframe/rpc-error": "^0.3.0",
+    "@mainframe/rpc-base": "^0.3.0",
+    "@mainframe/rpc-error": "^0.4.0",
     "fastest-validator": "^0.6.12"
-  },
-  "devDependencies": {
-    "flow-bin": "^0.93.0"
   }
 }

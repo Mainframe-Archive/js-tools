@@ -16,7 +16,6 @@ import {
   writeSecureFile,
   writeSignedFile,
 } from '..'
-import { decodeBase64, encodeBase64 } from '../../utils-base64'
 import {
   PASSWORDHASH_ALG_ARGON2ID13,
   PASSWORDHASH_MEMLIMIT_MIN,
@@ -26,6 +25,8 @@ import {
   createSecretBoxKeyFromPassword,
   createSignKeyPair,
 } from '../../utils-crypto'
+
+import { base64decode, base64encode } from '../lib/base64'
 
 const getFixture = name => join(__dirname, '__fixtures__', name)
 const getTempFile = name => join(tmpdir(), 'mf-secure-file-test', name)
@@ -81,7 +82,7 @@ describe('secure-file', () => {
       const getKey = meta => {
         return createSecretBoxKeyFromPassword(
           password,
-          decodeBase64(meta.salt),
+          base64decode(meta.salt),
           meta.opslimit,
           meta.memlimit,
           meta.algorithm,
@@ -91,7 +92,7 @@ describe('secure-file', () => {
         algorithm: PASSWORDHASH_ALG_ARGON2ID13,
         memlimit: PASSWORDHASH_MEMLIMIT_MIN,
         opslimit: PASSWORDHASH_OPSLIMIT_MIN,
-        salt: encodeBase64(createPasswordHashSalt()),
+        salt: base64encode(createPasswordHashSalt()),
       }
 
       await writeEncryptedFile(file, contents, await getKey(metadata), metadata)
@@ -107,7 +108,7 @@ describe('secure-file', () => {
         createSecretBoxKey(),
       )
       const notDecrypted = await readEncryptedFile(file, createSecretBoxKey())
-      expect(notDecrypted.opened).toBeUndefined()
+      expect(notDecrypted.opened).toBeNull()
     })
   })
 
@@ -151,7 +152,7 @@ describe('secure-file', () => {
       const signed = signContents(contents, kp)
       expect(signed.version).toBe(1)
       expect(signed.type).toBe('signed')
-      expect(signed.signed.keys[0]).toBe(encodeBase64(kp.publicKey))
+      expect(signed.signed.keys[0]).toBe(base64encode(kp.publicKey))
       expect(signed.signed.message).toBeDefined()
 
       const verified = verifyContents(signed)
@@ -177,7 +178,7 @@ describe('secure-file', () => {
       expect(contents.equals(alsoVerified)).toBe(true)
 
       const failsVerified = verifyContents(signed, useKeys.slice(0, 2))
-      expect(failsVerified).toBeUndefined()
+      expect(failsVerified).toBeNull()
     })
 
     it('signContents() throws an error if an empty array of KeyPairs is provided', () => {

@@ -1,6 +1,7 @@
 ## v0.3.0 (not released)
 
-Update `rx-socket` dependency and config type.
+- Update `rx-socket` dependency and config type.
+- Add Typescript definitions.
 
 ## v0.2.4 (2018-11-06)
 

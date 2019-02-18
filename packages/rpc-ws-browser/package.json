@@ -1,32 +1,31 @@
 {
   "name": "@mainframe/rpc-ws-browser",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "WebSocket RPC for browser",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "cjs/index.js",
   "module": "esm/index.js",
+  "types": "types/index.d.ts",
   "author": "Mainframe",
   "license": "MIT",
   "files": [
     "cjs/*",
-    "esm/*"
+    "esm/*",
+    "types/*"
   ],
   "scripts": {
-    "clean": "del cjs esm",
-    "build:cjs": "BABEL_ENV='browser-cjs' babel src --out-dir cjs",
-    "build:esm": "BABEL_ENV='browser-esm' babel src --out-dir esm",
+    "clean": "del cjs esm types",
+    "build:cjs": "BABEL_ENV='browser-cjs' babel src --out-dir cjs --extensions \".ts\"",
+    "build:esm": "BABEL_ENV='browser-esm' babel src --out-dir esm --extensions \".ts\"",
     "build:js": "yarn build:cjs && yarn build:esm",
-    "build:flow": "flow-copy-source src cjs && flow-copy-source src esm",
-    "build": "yarn clean && yarn build:js && yarn build:flow",
-    "test:types": "flow check",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "yarn clean && yarn build:js && yarn build:types",
+    "test:types": "tsc --noEmit",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@mainframe/rpc-stream": "^0.2.4",
-    "@mainframe/transport-ws-browser": "^0.2.1"
-  },
-  "devDependencies": {
-    "flow-bin": "^0.93.0"
+    "@mainframe/rpc-stream": "^0.3.0",
+    "@mainframe/transport-ws-browser": "^0.3.0"
   }
 }

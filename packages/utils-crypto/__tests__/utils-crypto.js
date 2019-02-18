@@ -139,7 +139,7 @@ describe('utils-crypto', () => {
         fromKP.publicKey,
         otherKP.secretKey,
       )
-      expect(notDecrypted).toBeUndefined()
+      expect(notDecrypted).toBeNull()
     })
   })
 
@@ -196,7 +196,7 @@ describe('utils-crypto', () => {
       expect(message.equals(decrypted)).toBe(true)
 
       const notDecrypted = decryptSecretBox(encrypted, createSecretBoxKey())
-      expect(notDecrypted).toBeUndefined()
+      expect(notDecrypted).toBeNull()
     })
   })
 
@@ -309,7 +309,7 @@ describe('utils-crypto', () => {
 
       const otherKP = createSignKeyPair()
       const invalid = openSigned(signed, otherKP.publicKey)
-      expect(invalid).toBeUndefined()
+      expect(invalid).toBeNull()
     })
   })
 

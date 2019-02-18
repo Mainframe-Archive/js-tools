@@ -4,17 +4,22 @@
   "description": "Electron transport",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
+  "types": "types/index.d.ts",
   "author": "Mainframe",
   "license": "MIT",
   "files": [
-    "lib/*"
+    "cjs/*",
+    "esm/*",
+    "types/*"
   ],
   "scripts": {
-    "clean": "del lib",
-    "build:js": "BABEL_ENV=electron-renderer babel src --out-dir lib",
-    "build:flow": "flow-copy-source src lib",
-    "build": "yarn clean && yarn build:js && yarn build:flow",
-    "test:types": "flow check",
+    "clean": "del cjs esm types",
+    "build:cjs": "BABEL_ENV='browser-cjs' babel src --out-dir cjs --extensions \".ts\"",
+    "build:esm": "BABEL_ENV='browser-esm' babel src --out-dir esm --extensions \".ts\"",
+    "build:js": "yarn build:cjs && yarn build:esm",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "yarn clean && yarn build:js && yarn build:types",
+    "test:types": "tsc --noEmit",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
@@ -25,7 +30,6 @@
     "electron": "^4.0.0"
   },
   "devDependencies": {
-    "electron": "^4.0.4",
-    "flow-bin": "^0.93.0"
+    "electron": "^4.0.4"
   }
 }

@@ -42,84 +42,45 @@ const outgoingMessage = await handle(context, incomingMessage)
 
 ## Types
 
-### IncomingMessage
+### RPCRequest
 
-Expected JSON-RPC incoming (request) message:
+Imported from `@mainframe/rpc-base`
 
-```js
-type IncomingMessage = {
-  jsonrpc: '2.0',
-  method: string,
-  id?: number | string,
-  params?: ?any,
-}
-```
+### RPCResponse
 
-### OutgoingErrorMessage
-
-```js
-type OutgoingErrorMessage = {
-  jsonrpc: '2.0',
-  id: number | string,
-  error: {
-    code: number,
-    message: string,
-    data?: ?any,
-  },
-}
-```
-
-### OutgoingResultMessage
-
-```js
-type OutgoingResultMessage = {
-  jsonrpc: '2.0',
-  id: number | string,
-  result: ?any,
-}
-```
-
-### OutgoingMessage
-
-JSON-RPC outgoing (response) message:
-
-```js
-type OutgoingMessage = OutgoingErrorMessage | OutgoingResultMessage
-```
+Imported from `@mainframe/rpc-base`
 
 ### ErrorHandler
 
 ```js
-type ErrorHandler = (ctx: any, msg: IncomingMessage, error: Error) => void
+type ErrorHandler = <C = any, P = any>(ctx: C, msg: RPCRequest<P>, error: Error) => void
 ```
 
 ### MethodHandler
 
 ```js
-type MethodHandler = (ctx: any, params: Object) => ?any
+type MethodHandler = <C = any, P = any, R = any>(ctx: C, params: P) => R | Promise<R>
 ```
 
 ### NotificationHandler
 
 ```js
-type NotificationHandler = (ctx: any, msg: IncomingMessage) => void
+type NotificationHandler = <C = any, P = any>(ctx: C, msg: RPCRequest<P>) => void
 ```
 
 ### MethodWithParams
 
 ```js
-type MethodWithParams = {
-  params?: ?Object,
-  handler: MethodHandler,
+interface MethodWithParams {
+  params?: Record<string, any> | undefined
+  handler: MethodHandler
 }
 ```
 
 ### Methods
 
 ```js
-type Methods = {
-  [name: string]: MethodHandler | MethodWithParams,
-}
+type Methods = Record<string, MethodHandler | MethodWithParams>
 ```
 
 ### HandlerParams
@@ -127,17 +88,20 @@ type Methods = {
 ```js
 type HandlerParams = {
   methods: Methods,
-  onHandlerError?: ?ErrorHandler,
-  onInvalidMessage?: ?NotificationHandler,
-  onNotification?: ?NotificationHandler,
-  validatorOptions?: ?Object,
+  onHandlerError?: ErrorHandler | undefined,
+  onInvalidMessage?: NotificationHandler | undefined,
+  onNotification?: NotificationHandler | undefined,
+  validatorOptions?: any | undefined,
 }
 ```
 
 ### HandlerFunc
 
 ```js
-type HandlerFunc = (ctx: any, msg: IncomingMessage) => Promise<?OutgoingMessage>
+type HandlerFunc = <C = any, P = any, R = any, E = any>(
+  ctx: C,
+  req: RPCRequest<P>,
+) => Promise<RPCResponse<R, E>>
 ```
 
 ## API
@@ -160,7 +124,7 @@ Tries to parse a JSON string, or throws a RPCError with code `-32700` (parse err
 
 1.  `input: string`
 
-**Returns** `Object`
+**Returns** `T = any`
 
 ## License
 
