@@ -56,7 +56,7 @@ export default class RPCError<T = any> extends Error {
   }
 }
 
-function createErrorFactory(code: ERROR_CODE) {
+function createErrorFactory(code: ERROR_CODE): <T>(data?: T) => RPCError<T> {
   const message = ERROR_MESSAGE[code]
   return function createError<T = any>(data?: T) {
     return new RPCError<T>(code, message, data)

@@ -128,7 +128,12 @@ function defaultOnNotification<C = any, P = any>(
   console.warn('Unhandled notification', msg)
 }
 
-export default function createHandler(params: HandlerParams) {
+export default function createHandler(
+  params: HandlerParams,
+): <C = any, P = any, R = any, E = any>(
+  ctx: C,
+  msg: RPCRequest<P>,
+) => Promise<RPCResponse<R, E> | null> {
   const methods = normalizeMethods(params.methods, params.validatorOptions)
   const onHandlerError = params.onHandlerError || defaultOnHandlerError
   const onInvalidMessage = params.onInvalidMessage || defaultOnInvalidMessage

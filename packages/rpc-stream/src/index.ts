@@ -21,7 +21,7 @@ export default class StreamRPC extends BaseRPC {
     return this._subscription != null && !this._subscription.closed
   }
 
-  public connect() {
+  public connect(): void {
     if (this.connected) {
       return
     }
@@ -86,7 +86,7 @@ export default class StreamRPC extends BaseRPC {
     }
   }
 
-  public disconnect() {
+  public disconnect(): void {
     this._transport.complete()
   }
 
@@ -124,11 +124,11 @@ export default class StreamRPC extends BaseRPC {
     })
   }
 
-  public notify(method: string, params?: any) {
+  public notify(method: string, params?: any): void {
     this._transport.next({ jsonrpc: '2.0', method, params })
   }
 
-  public subscribe(...args: Array<any>) {
+  public subscribe(...args: Array<any>): () => void {
     if (!this.connected) {
       throw new Error('Not connected')
     }

@@ -24,6 +24,6 @@
     "@babel/runtime": "^7.0.0",
     "@mainframe/rpc-base": "^0.3.0",
     "@mainframe/rpc-error": "^0.4.0",
-    "fastest-validator": "^0.6.12"
+    "fastest-validator": "0.6.15"
   }
 }

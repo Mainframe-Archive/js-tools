@@ -9,7 +9,9 @@ export const httpRPC = http
 export const ipcRPC = ipc
 export const wsRPC = ws
 
-export default function createRPC(endpoint: string) {
+export default function createRPC(
+  endpoint: string,
+): ReturnType<typeof http> | ReturnType<typeof ipc> | ReturnType<typeof ws> {
   if (HTTP_RE.test(endpoint)) {
     return http(endpoint)
   }

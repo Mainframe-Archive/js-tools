@@ -55,7 +55,11 @@ export class DecryptStream extends Transform {
     this._buffer = Buffer.alloc(0)
   }
 
-  public _transform(c: Buffer | string, encoding: string, cb: CallbackFunc) {
+  public _transform(
+    c: Buffer | string,
+    encoding: string,
+    cb: CallbackFunc,
+  ): void {
     const chunk = toBuffer(c, encoding)
     let ciphertext
     if (this._state == null) {
@@ -89,7 +93,7 @@ export class DecryptStream extends Transform {
     cb()
   }
 
-  public _flush(cb: CallbackFunc) {
+  public _flush(cb: CallbackFunc): void {
     if (this._buffer.length >= SECRETSTREAM_ABYTES) {
       const plaintext = Buffer.alloc(this._buffer.length - SECRETSTREAM_ABYTES)
       sodium.crypto_secretstream_xchacha20poly1305_pull(
@@ -105,7 +109,7 @@ export class DecryptStream extends Transform {
   }
 }
 
-export function createDecryptStream(key: Buffer) {
+export function createDecryptStream(key: Buffer): DecryptStream {
   return new DecryptStream(key)
 }
 
@@ -126,7 +130,11 @@ export class EncryptStream extends Transform {
     )
   }
 
-  public _transform(c: Buffer | string, encoding: string, cb: CallbackFunc) {
+  public _transform(
+    c: Buffer | string,
+    encoding: string,
+    cb: CallbackFunc,
+  ): void {
     if (this._header !== null) {
       this.push(this._header)
       this._header = null
@@ -150,7 +158,7 @@ export class EncryptStream extends Transform {
     cb()
   }
 
-  public _flush(cb: CallbackFunc) {
+  public _flush(cb: CallbackFunc): void {
     const ciphertext = Buffer.alloc(this._buffer.length + SECRETSTREAM_ABYTES)
     sodium.crypto_secretstream_xchacha20poly1305_push(
       this._state,
@@ -165,6 +173,6 @@ export class EncryptStream extends Transform {
   }
 }
 
-export function createEncryptStream(key: Buffer) {
+export function createEncryptStream(key: Buffer): EncryptStream {
   return new EncryptStream(key)
 }

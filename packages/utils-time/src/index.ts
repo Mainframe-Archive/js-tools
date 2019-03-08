@@ -21,13 +21,15 @@ export function withTimeout<T = any>(
   return Promise.race([wait, createTimeout(time)])
 }
 
-export function createWithTimeout(defaultTime: number) {
+export function createWithTimeout(
+  defaultTime: number,
+): <T = any>(wait: Promise<T>, maybeTime?: number) => Promise<T> {
   return function<T = any>(wait: Promise<T>, maybeTime?: number): Promise<T> {
     return withTimeout<T>(wait, maybeTime == null ? defaultTime : maybeTime)
   }
 }
 
-export function createGetTime() {
+export function createGetTime(): () => number {
   let time = Date.now()
   return function getTime(): number {
     const now = Date.now()

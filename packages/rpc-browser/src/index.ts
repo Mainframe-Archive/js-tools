@@ -7,7 +7,9 @@ const WS_RE = /^wss?:\/\//i
 export const httpRPC = http
 export const wsRPC = ws
 
-export default function createRPC(endpoint: string) {
+export default function createRPC(
+  endpoint: string,
+): ReturnType<typeof http> | ReturnType<typeof ws> {
   if (HTTP_RE.test(endpoint)) {
     return http(endpoint)
   }
