@@ -1,5 +1,5 @@
 import RPCError, {
-  ERROR_MESSAGES,
+  ERROR_MESSAGE,
   isServerError,
   getErrorMessage,
   parseError,
@@ -35,8 +35,8 @@ describe('rpc-error', () => {
   })
 
   it('getErrorMessage() returns the error message for the provided code', () => {
-    Object.keys(ERROR_MESSAGES).forEach(code => {
-      expect(getErrorMessage(code)).toBe(ERROR_MESSAGES[code])
+    Object.keys(ERROR_MESSAGE).forEach(code => {
+      expect(getErrorMessage(code)).toBe(ERROR_MESSAGE[code])
     })
     expect(getErrorMessage(-32067)).toBe('Server error')
     expect(getErrorMessage(-30000)).toBe('Application error')

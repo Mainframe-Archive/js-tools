@@ -1,7 +1,6 @@
 module.exports = function(api) {
   return api.env('test')
     ? {
-        plugins: ['@babel/plugin-proposal-class-properties'],
         presets: [
           [
             '@babel/preset-env',
@@ -12,7 +11,7 @@ module.exports = function(api) {
               modules: 'commonjs',
             },
           ],
-          '@babel/preset-flow',
+          '@babel/preset-typescript',
         ],
       }
     : {}

@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['mainframe', 'mainframe/flow', 'mainframe/jest'],
+  extends: ['mainframe', 'mainframe/jest', 'mainframe/typescript'],
 }

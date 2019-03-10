@@ -1,3 +1,7 @@
+## v0.3.0 (not released)
+
+Add Typescript definitions.
+
 ## v0.2.5 (2018-11-12)
 
 Include RxJS as dependency rather than peer dependency.

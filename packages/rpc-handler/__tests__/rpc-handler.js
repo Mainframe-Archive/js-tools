@@ -1,7 +1,7 @@
-import RPCError, { ERROR_CODES, ERROR_MESSAGES } from '@mainframe/rpc-error'
+import RPCError, { ERROR_CODE, ERROR_MESSAGE } from '@mainframe/rpc-error'
 
 import createHandler, {
-  createErrorMessage,
+  createErrorResponse,
   normalizeMethods,
   parseJSON,
 } from '..'
@@ -15,21 +15,21 @@ describe('rpc-handler', () => {
     try {
       parseJSON('{"ok":false')
     } catch (err) {
-      const code = ERROR_CODES.PARSE_ERROR
+      const code = ERROR_CODE.PARSE_ERROR
       expect(err instanceof RPCError).toBe(true)
       expect(err.code).toBe(code)
-      expect(err.message).toBe(ERROR_MESSAGES[code])
+      expect(err.message).toBe(ERROR_MESSAGE[code])
     }
   })
 
-  it('createErrorMessage() returns an OutgoingErrorMessage object with the error message', () => {
-    const code = ERROR_CODES.INVALID_PARAMS
-    expect(createErrorMessage('test', code)).toEqual({
+  it('createErrorResponse() returns a RPCResponse object with the error message', () => {
+    const code = ERROR_CODE.INVALID_PARAMS
+    expect(createErrorResponse('test', code)).toEqual({
       jsonrpc: '2.0',
       id: 'test',
       error: {
         code,
-        message: ERROR_MESSAGES[code],
+        message: ERROR_MESSAGE[code],
       },
     })
   })
@@ -55,9 +55,9 @@ describe('rpc-handler', () => {
     try {
       methods.second({}, {})
     } catch (err) {
-      const code = ERROR_CODES.INVALID_PARAMS
+      const code = ERROR_CODE.INVALID_PARAMS
       expect(err.code).toBe(code)
-      expect(err.message).toBe(ERROR_MESSAGES[code])
+      expect(err.message).toBe(ERROR_MESSAGE[code])
       expect(err.data).toEqual([
         {
           type: 'required',
@@ -87,18 +87,18 @@ describe('rpc-handler', () => {
   })
 
   it('createHandler() handles invalid "jsonrpc" key', async () => {
-    const code = ERROR_CODES.INVALID_REQUEST
+    const code = ERROR_CODE.INVALID_REQUEST
     const onInvalidMessage = jest.fn()
     const handle = createHandler({ methods: {}, onInvalidMessage })
 
     const res1 = await handle({ ctx: true }, { method: 'test' })
-    expect(res1).toBeUndefined()
+    expect(res1).toBeNull()
 
     const res2 = await handle({}, { jsonrpc: '2', id: 'test', method: 'test' })
     expect(res2).toEqual({
       jsonrpc: '2.0',
       id: 'test',
-      error: { code, message: ERROR_MESSAGES[code] },
+      error: { code, message: ERROR_MESSAGE[code] },
     })
 
     expect(onInvalidMessage.mock.calls).toHaveLength(1)
@@ -109,18 +109,18 @@ describe('rpc-handler', () => {
   })
 
   it('createHandler() handles invalid "method" key', async () => {
-    const code = ERROR_CODES.INVALID_REQUEST
+    const code = ERROR_CODE.INVALID_REQUEST
     const onInvalidMessage = jest.fn()
     const handle = createHandler({ methods: {}, onInvalidMessage })
 
     const res1 = await handle({ ctx: true }, { jsonrpc: '2.0' })
-    expect(res1).toBeUndefined()
+    expect(res1).toBeNull()
 
     const res2 = await handle({}, { jsonrpc: '2.0', id: 'test' })
     expect(res2).toEqual({
       jsonrpc: '2.0',
       id: 'test',
-      error: { code, message: ERROR_MESSAGES[code] },
+      error: { code, message: ERROR_MESSAGE[code] },
     })
 
     expect(onInvalidMessage.mock.calls).toHaveLength(1)
@@ -134,7 +134,7 @@ describe('rpc-handler', () => {
     const onNotification = jest.fn()
     const handle = createHandler({ methods: {}, onNotification })
     const res = await handle({ ctx: true }, { jsonrpc: '2.0', method: 'test' })
-    expect(res).toBeUndefined()
+    expect(res).toBeNull()
     expect(onNotification.mock.calls).toHaveLength(1)
     expect(onNotification.mock.calls[0]).toEqual([
       { ctx: true },
@@ -143,7 +143,7 @@ describe('rpc-handler', () => {
   })
 
   it('createHandler() handles not found methods', async () => {
-    const code = ERROR_CODES.METHOD_NOT_FOUND
+    const code = ERROR_CODE.METHOD_NOT_FOUND
     const handle = createHandler({ methods: {} })
     const res = await handle(
       { ctx: true },
@@ -152,7 +152,7 @@ describe('rpc-handler', () => {
     expect(res).toEqual({
       jsonrpc: '2.0',
       id: 'test',
-      error: { code, message: ERROR_MESSAGES[code] },
+      error: { code, message: ERROR_MESSAGE[code] },
     })
   })
 
@@ -184,43 +184,43 @@ describe('rpc-handler', () => {
     const paramErrorHandler = jest.fn()
     const handle = createHandler({
       methods: {
-        param_error: {
+        paramError: {
           params: {
             name: 'string',
           },
           handler: paramErrorHandler,
         },
-        rpc_error: {
+        rpcError: {
           handler: () => {
             throw new RPCError(1000, 'Custom error message')
           },
         },
-        js_error_no_code: () => {
+        jsErrorNoCode: () => {
           throw new Error('Error message')
         },
-        js_error_with_code: () => {
+        jsErrorWithCode: () => {
           const err = new Error('Error message')
           err.code = 1000
           throw err
         },
-        js_error_no_message: () => {
+        jsErrorNoMessage: () => {
           throw new Error()
         },
       },
       onHandlerError,
     })
 
-    const paramsErrorCode = ERROR_CODES.INVALID_PARAMS
+    const paramsErrorCode = ERROR_CODE.INVALID_PARAMS
     const paramsErrorRes = await handle(
       { ctx: true },
-      { jsonrpc: '2.0', id: 'params', method: 'param_error' },
+      { jsonrpc: '2.0', id: 'params', method: 'paramError' },
     )
     expect(paramsErrorRes).toEqual({
       jsonrpc: '2.0',
       id: 'params',
       error: {
         code: paramsErrorCode,
-        message: ERROR_MESSAGES[paramsErrorCode],
+        message: ERROR_MESSAGE[paramsErrorCode],
         data: [
           {
             type: 'required',
@@ -236,7 +236,7 @@ describe('rpc-handler', () => {
 
     const rpcErrorRes = await handle(
       { ctx: true },
-      { jsonrpc: '2.0', id: 'rpc', method: 'rpc_error' },
+      { jsonrpc: '2.0', id: 'rpc', method: 'rpcError' },
     )
     expect(rpcErrorRes).toEqual({
       jsonrpc: '2.0',
@@ -249,7 +249,7 @@ describe('rpc-handler', () => {
 
     const jsNoCodeErrorRes = await handle(
       { ctx: true },
-      { jsonrpc: '2.0', id: 'js_no_code', method: 'js_error_no_code' },
+      { jsonrpc: '2.0', id: 'js_no_code', method: 'jsErrorNoCode' },
     )
     expect(jsNoCodeErrorRes).toEqual({
       jsonrpc: '2.0',
@@ -262,7 +262,7 @@ describe('rpc-handler', () => {
 
     const jsWithCodeErrorRes = await handle(
       { ctx: true },
-      { jsonrpc: '2.0', id: 'js_with_code', method: 'js_error_with_code' },
+      { jsonrpc: '2.0', id: 'js_with_code', method: 'jsErrorWithCode' },
     )
     expect(jsWithCodeErrorRes).toEqual({
       jsonrpc: '2.0',
@@ -275,7 +275,7 @@ describe('rpc-handler', () => {
 
     const jsNoMessageErrorRes = await handle(
       { ctx: true },
-      { jsonrpc: '2.0', id: 'js_no_message', method: 'js_error_no_message' },
+      { jsonrpc: '2.0', id: 'js_no_message', method: 'jsErrorNoMessage' },
     )
     expect(jsNoMessageErrorRes).toEqual({
       jsonrpc: '2.0',

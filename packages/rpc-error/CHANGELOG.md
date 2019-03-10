@@ -1,3 +1,7 @@
+## v0.4.0 (not released)
+
+Add Typescript definitions.
+
 ## v0.3.0 (2018-11-06)
 
 Remove `ErrorObject` type, now exported from `rpc-base`.

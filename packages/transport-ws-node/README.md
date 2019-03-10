@@ -27,7 +27,7 @@ transport.next({ hello: 'transport' })
 
 1.  `url: string`
 
-**Returns** `Rx.Subject<Object>`
+**Returns** `Rx.Subject<T = any>`
 
 ## License
 

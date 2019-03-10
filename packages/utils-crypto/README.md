@@ -15,18 +15,18 @@ yarn add @mainframe/utils-crypto
 Object containing the public and secret parts of the key:
 
 ```js
-type KeyPair = {
-  publicKey: Buffer,
-  secretKey: Buffer,
+interface KeyPair {
+  publicKey: Buffer
+  secretKey: Buffer
 }
 ```
 
 ### EncryptedBox
 
 ```js
-type EncryptedBox = {
-  cipher: Buffer,
-  nonce: Buffer,
+interface EncryptedBox {
+  cipher: Buffer
+  nonce: Buffer
 }
 ```
 
@@ -84,7 +84,7 @@ Decrypts the provided `EncryptedBox` using the `fromPublicKey` and `forSecretKey
 1.  `fromPublicKey: Buffer`
 1.  `forSecretKey: Buffer`
 
-**Returns** `Buffer`
+**Returns** `Buffer` if decryption is successfull, `null` otherwise
 
 ### createSecretBoxKey()
 
@@ -126,7 +126,7 @@ Decrypts the provided `EncryptedBox` using the `key`.
 1.  `data: Buffer`
 1.  `key: Buffer`
 
-**Returns** `Buffer`
+**Returns** `Buffer` if decryption is successfull, `null` otherwise
 
 ### hash()
 
@@ -266,14 +266,14 @@ Signs the provided `data` with the `secretKey` and returns the signed data.
 
 ### openSigned()
 
-Verifies the provided `data` has been signed for the `publicKey` and returns the unsigned data. If the signature is incorrect, nothing is returned.
+Verifies the provided `data` has been signed for the `publicKey` and returns the unsigned data. If the signature is incorrect, `null` is returned.
 
 **Arguments**
 
 1.  `data: Buffer`
 1.  `publicKey: Buffer`
 
-**Returns** `?Buffer`
+**Returns** `Buffer` if verification is successfull, `null` otherwise
 
 ## License
 

@@ -1,3 +1,7 @@
+## v0.3.0 (not released)
+
+Add Typescript definitions.
+
 ## v0.2.1 (2018-08-20)
 
 Fix support for `validatorOptions`.

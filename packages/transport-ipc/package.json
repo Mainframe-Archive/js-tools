@@ -4,25 +4,24 @@
   "description": "IPC transport",
   "repository": "git@github.com:MainframeHQ/js-tools.git",
   "main": "lib/index.js",
+  "types": "types/index.d.ts",
   "author": "Mainframe",
   "license": "MIT",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
   "scripts": {
-    "clean": "del lib",
-    "build:js": "BABEL_ENV=node babel src --out-dir lib",
-    "build:flow": "flow-copy-source src lib",
-    "build": "yarn clean && yarn build:js && yarn build:flow",
-    "test:types": "flow check",
+    "clean": "del lib types",
+    "build:js": "BABEL_ENV=node babel src --out-dir lib --extensions \".ts\"",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "yarn clean && yarn build:js && yarn build:types",
+    "test:types": "tsc --noEmit",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
     "rx-socket": "^0.5.0",
     "rxjs": "^6.3.3"
-  },
-  "devDependencies": {
-    "flow-bin": "^0.93.0"
   }
 }

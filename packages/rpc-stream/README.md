@@ -21,7 +21,7 @@ class MyAPI extends StreamRPC {
     super(ipcTransport(path))
   }
 
-  getUser(id: string): Promise<Object> {
+  getUser(id: string): Promise<{ name: string }> {
     return this.request('getUser', [id])
   }
 }
@@ -45,9 +45,9 @@ See [the `BaseRPC` API](../rpc-base/README.md#api) for inherited methods and pro
 **Arguments**
 
 1.  `method: string`
-1.  `params: Array<any>`
+1.  `params: T = any`
 
-**Returns** `Promise<any>`
+**Returns** `Promise<R = any>`
 
 ## License
 

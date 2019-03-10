@@ -1,3 +1,7 @@
+## v0.3.0 (not released)
+
+Add Typescript definitions.
+
 ## v0.2.0 (2018-11-06)
 
 Add Flow types for JSON-RPC requests and responses.

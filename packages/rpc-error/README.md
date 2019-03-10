@@ -27,7 +27,7 @@ const error4 = new RPCError(1000, 'Custom app error', { user: 'alice' })
 
 1.  `code: number`
 1.  `message?: string`: will be set based on the `code` when not provided
-1.  `data?: ?any`: additional error data
+1.  `data?: T`: optional additional error data
 
 ### .toObject()
 

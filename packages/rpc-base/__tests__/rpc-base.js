@@ -15,9 +15,4 @@ describe('rpc-base', () => {
     expect(typeof id1).toBe('string')
     expect(id1).not.toBe(id2)
   })
-
-  it('has a request() method that throws if not implemented', () => {
-    const rpc = new BaseRPC()
-    expect(rpc.request('test')).rejects.toThrow('Must be implemented')
-  })
 })

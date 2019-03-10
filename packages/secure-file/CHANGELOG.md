@@ -1,3 +1,7 @@
+## v0.2.0 (not released)
+
+Add Typescript definitions.
+
 ## v0.1.3 (2018-10-03)
 
 Fix Flow types related to `fs-extra` usage.
