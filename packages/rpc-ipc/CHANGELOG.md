@@ -1,4 +1,4 @@
-## v0.3.0 (not released)
+## v0.3.0 (2019-03-11)
 
 - Update `@mainframe/transport-ipc` dependency and config type.
 - Add Typescript definitions.

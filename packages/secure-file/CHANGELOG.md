@@ -1,4 +1,4 @@
-## v0.2.0 (not released)
+## v0.2.0 (2019-03-11)
 
 Add Typescript definitions.
 
